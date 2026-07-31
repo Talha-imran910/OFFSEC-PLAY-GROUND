@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"e92927f926ed61e9","type":"group","x":180,"y":-260,"width":160,"height":244,"label":"TCP - open"},
+		{"id":"fc4d39df96749f11","type":"text","text":"## nmap\n```\nPORT     STATE SERVICE VERSION\n22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   3072 ef:24:0e:ab:d2:b3:16:b4:4b:2e:27:c0:5f:48:79:8b (RSA)\n|   256 f2:d8:35:3f:49:59:85:85:07:e6:a2:0e:65:7a:8c:4b (ECDSA)\n|_  256 0b:23:89:c3:c0:26:d5:64:5e:93:b7:ba:f5:14:7f:3e (ED25519)\n80/tcp   open  http    Apache httpd 2.4.41 ((Ubuntu))\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-title: Potato company\n|_http-server-header: Apache/2.4.41 (Ubuntu)\n2112/tcp open  ftp     ProFTPD\n| ftp-anon: Anonymous FTP login allowed (FTP code 230)\n| -rw-r--r--   1 ftp      ftp           901 Aug  2  2020 index.php.bak\n|_-rw-r--r--   1 ftp      ftp            54 Aug  2  2020 welcome.msg\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\n```","x":-860,"y":20,"width":767,"height":531},
+		{"id":"d0fe73036fe36ff7","type":"text","text":"port 22","x":200,"y":-240,"width":125,"height":60},
+		{"id":"ab5e3cf1ada89905","type":"text","text":"port 80","x":200,"y":-167,"width":125,"height":60},
+		{"id":"076b03caa57d2da2","type":"text","text":"port 2112","x":200,"y":-96,"width":125,"height":60},
+		{"id":"7870b03727c09786","type":"text","text":"# TARGET","x":-260,"y":-167,"width":250,"height":60},
+		{"id":"8080320ae250e16b","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721003908.png","x":620,"y":-130,"width":596,"height":300},
+		{"id":"c9c4dc4665a78f84","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721003928.png","x":647,"y":286,"width":568,"height":330},
+		{"id":"9ac07ea353be06ee","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721004408.png","x":1480,"y":286,"width":597,"height":330},
+		{"id":"b9046704181e2f84","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721004421.png","x":1480,"y":760,"width":597,"height":340},
+		{"id":"7fd95207e4dbe5f3","type":"text","text":"```\nnmap --script=ssh-brute.nse 192.168.143.101\n```","x":720,"y":-440,"width":489,"height":68},
+		{"id":"887929301da9b3ad","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721010535.png","x":1320,"y":-522,"width":834,"height":312},
+		{"id":"cac3730eee3f84c0","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721022729.png","x":2420,"y":-700,"width":1034,"height":560},
+		{"id":"1dd708389d86a6a1","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721022800.png","x":2529,"y":140,"width":611,"height":176},
+		{"id":"621773ee0a304bcc","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721022814.png","x":2320,"y":480,"width":1134,"height":193}
+	],
+	"edges":[
+		{"id":"b892291e7570b6f6","fromNode":"7870b03727c09786","fromSide":"bottom","toNode":"fc4d39df96749f11","toSide":"top"},
+		{"id":"b59dfdea165fbe2f","fromNode":"7870b03727c09786","fromSide":"right","toNode":"e92927f926ed61e9","toSide":"left"},
+		{"id":"75d163db9fe6120a","fromNode":"e92927f926ed61e9","fromSide":"right","toNode":"8080320ae250e16b","toSide":"top"},
+		{"id":"038adfb17de627f3","fromNode":"8080320ae250e16b","fromSide":"bottom","toNode":"c9c4dc4665a78f84","toSide":"top"},
+		{"id":"34b86d7ea3a5090c","fromNode":"c9c4dc4665a78f84","fromSide":"right","toNode":"9ac07ea353be06ee","toSide":"left"},
+		{"id":"f438532f898c6927","fromNode":"9ac07ea353be06ee","fromSide":"bottom","toNode":"b9046704181e2f84","toSide":"top","label":"user : admin"},
+		{"id":"ffe1a67c7d2c746f","fromNode":"d0fe73036fe36ff7","fromSide":"right","toNode":"7fd95207e4dbe5f3","toSide":"left"},
+		{"id":"1e12b934cc5dd3fb","fromNode":"7fd95207e4dbe5f3","fromSide":"right","toNode":"887929301da9b3ad","toSide":"left"},
+		{"id":"6d3abc0ba3e98858","fromNode":"887929301da9b3ad","fromSide":"right","toNode":"cac3730eee3f84c0","toSide":"left"},
+		{"id":"f8ec006b0497de53","fromNode":"cac3730eee3f84c0","fromSide":"bottom","toNode":"1dd708389d86a6a1","toSide":"top"},
+		{"id":"ad3a949c0457a973","fromNode":"1dd708389d86a6a1","fromSide":"bottom","toNode":"621773ee0a304bcc","toSide":"top"}
+	]
+}

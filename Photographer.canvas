@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"05dc3fba52726a23","type":"group","x":1060,"y":-720,"width":290,"height":300,"label":"TCP - open"},
+		{"id":"5defba4b5069e0bd","type":"text","text":"### nmap\n```\nPORT     STATE SERVICE     VERSION\n22/tcp   open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   2048 41:4d:aa:18:86:94:8e:88:a7:4c:6b:42:60:76:f1:4f (RSA)\n|   256 4d:a3:d0:7a:8f:64:ef:82:45:2d:01:13:18:b7:e0:13 (ECDSA)\n|_  256 1a:01:7a:4f:cf:95:85:bf:31:a1:4f:15:87:ab:94:e2 (ED25519)\n80/tcp   open  http        Apache httpd 2.4.18 ((Ubuntu))\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-server-header: Apache/2.4.18 (Ubuntu)\n|_http-title: Photographer by v1n1v131r4\n139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)\n445/tcp  open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)\n8000/tcp open  http        Apache httpd 2.4.18 ((Ubuntu))\n|_http-server-header: Apache/2.4.18 (Ubuntu)\n|_http-generator: Koken 0.22.24\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-title: daisa ahomi\nService Info: Host: PHOTOGRAPHER; OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\nHost script results:\n| nbstat: NetBIOS name: PHOTOGRAPHER, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)\n| Names:\n|   PHOTOGRAPHER<00>     Flags: <unique><active>\n|   PHOTOGRAPHER<03>     Flags: <unique><active>\n|   PHOTOGRAPHER<20>     Flags: <unique><active>\n|   \\x01\\x02__MSBROWSE__\\x02<01>  Flags: <group><active>\n|   WORKGROUP<00>        Flags: <group><active>\n|   WORKGROUP<1d>        Flags: <unique><active>\n|_  WORKGROUP<1e>        Flags: <group><active>\n| smb-security-mode: \n|   account_used: guest\n|   authentication_level: user\n|   challenge_response: supported\n|_  message_signing: disabled (dangerous, but default)\n| smb-os-discovery: \n|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)\n|   Computer name: photographer\n|   NetBIOS computer name: PHOTOGRAPHER\\x00\n|   Domain name: \\x00\n|   FQDN: photographer\n|_  System time: 2026-07-29T13:23:18-04:00\n|_clock-skew: mean: 1h21m03s, deviation: 2h18m33s, median: 1m03s\n| smb2-time: \n|   date: 2026-07-29T17:23:18\n|_  start_date: N/A\n| smb2-security-mode: \n|   3.1.1: \n|_    Message signing enabled but not required\n\n```","x":-420,"y":-400,"width":900,"height":1360},
+		{"id":"59eabb932428d88a","type":"text","text":"# TARGET","x":600,"y":-600,"width":250,"height":60},
+		{"id":"4157cfde5fb6e6cf","type":"text","text":"port 80","x":1080,"y":-700,"width":250,"height":50},
+		{"id":"0aea7f64faf4c865","type":"text","text":"port 8000","x":1080,"y":-640,"width":250,"height":60},
+		{"id":"c6da7df3dfba3d7d","type":"text","text":"port 139","x":1080,"y":-560,"width":250,"height":50},
+		{"id":"536b9fb5c18814ee","type":"text","text":"port 445","x":1080,"y":-500,"width":250,"height":60},
+		{"id":"42d9c36b0d89841f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730021909.png","x":1600,"y":-1020,"width":400,"height":191},
+		{"id":"204c1d7453860a81","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022103.png","x":1005,"y":-280,"width":400,"height":120},
+		{"id":"d6b206c031855c14","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730020039.png","x":2380,"y":-840,"width":532,"height":266},
+		{"id":"e101f611d7991f92","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022034.png","x":1480,"y":-568,"width":399,"height":137},
+		{"id":"e270910e971c2ceb","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730021944.png","x":1640,"y":-748,"width":400,"height":147},
+		{"id":"91d7887686ed0bf7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022136.png","x":1880,"y":-379,"width":400,"height":159},
+		{"id":"81cdadcce5fb2d5e","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022247.png","x":2460,"y":-439,"width":527,"height":279},
+		{"id":"e5420d6432c863b7","type":"text","text":"```\n──(kali㉿kali)-[~]\n└─$ cat 48706.txt \n# Exploit Title: Koken CMS 0.22.24 - Arbitrary File Upload (Authenticated)\n# Date: 2020-07-15\n# Exploit Author: v1n1v131r4\n```# Vendor Homepage: http://koken.me/\n# Software Link: https://www.softaculous.com/apps/cms/Koken\n# Version: 0.22.24\n# Tested on: Linux\n# PoC: https://github.com/V1n1v131r4/Bypass-File-Upload-on-Koken-CMS/blob/master/README.md\n\nThe Koken CMS upload restrictions are based on a list of allowed file extensions (withelist), which facilitates bypass through the handling of the HTTP request via Burp.\n\nSteps to exploit:\n\n1. Create a malicious PHP file with this content:\n\n   <?php system($_GET['cmd']);?>\n\n2. Save as \"image.php.jpg\"\n\n3. Authenticated, go to Koken CMS Dashboard, upload your file on \"Import Content\" button (Library panel) and send the HTTP request to Burp.\n\n4. On Burp, rename your file to \"image.php\"\n\n","x":1500,"y":-140,"width":840,"height":740,"color":"1"},
+		{"id":"43b9699f73e514a7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022406.png","x":3900,"y":637,"width":739,"height":263},
+		{"id":"568f2702806c9ab4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022351.png","x":2700,"y":540,"width":548,"height":520},
+		{"id":"16e8a6d1f9312d11","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022225.png","x":2558,"y":30,"width":332,"height":400},
+		{"id":"ba6e5cd101bedfdc","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730022316.png","x":3240,"y":94,"width":400,"height":272}
+	],
+	"edges":[
+		{"id":"272d46ef8bf3f978","fromNode":"59eabb932428d88a","fromSide":"bottom","toNode":"5defba4b5069e0bd","toSide":"top"},
+		{"id":"e8c79dbcc50671b7","fromNode":"59eabb932428d88a","fromSide":"right","toNode":"05dc3fba52726a23","toSide":"left"},
+		{"id":"10f8c2acc832a912","fromNode":"4157cfde5fb6e6cf","fromSide":"right","toNode":"42d9c36b0d89841f","toSide":"left"},
+		{"id":"3ef279719e410765","fromNode":"0aea7f64faf4c865","fromSide":"right","toNode":"e270910e971c2ceb","toSide":"left"},
+		{"id":"2ea1e7dd14dc0141","fromNode":"e270910e971c2ceb","fromSide":"right","toNode":"d6b206c031855c14","toSide":"left"},
+		{"id":"6e148c0d40cb70ef","fromNode":"c6da7df3dfba3d7d","fromSide":"right","toNode":"e101f611d7991f92","toSide":"left"},
+		{"id":"f15c37dfa68642e9","fromNode":"536b9fb5c18814ee","fromSide":"right","toNode":"e101f611d7991f92","toSide":"left"},
+		{"id":"e562005aa542083a","fromNode":"59eabb932428d88a","fromSide":"bottom","toNode":"204c1d7453860a81","toSide":"top"},
+		{"id":"ece45df7948bf049","fromNode":"e101f611d7991f92","fromSide":"right","toNode":"91d7887686ed0bf7","toSide":"top"},
+		{"id":"2edb0b65e9c01843","fromNode":"91d7887686ed0bf7","fromSide":"right","toNode":"81cdadcce5fb2d5e","toSide":"left","label":"\n"},
+		{"id":"5f66e55162b49d99","fromNode":"81cdadcce5fb2d5e","fromSide":"bottom","toNode":"16e8a6d1f9312d11","toSide":"top"},
+		{"id":"81874cf0ebfcaa9f","fromNode":"16e8a6d1f9312d11","fromSide":"right","toNode":"ba6e5cd101bedfdc","toSide":"left"},
+		{"id":"4e29be3f9fdefafe","fromNode":"ba6e5cd101bedfdc","fromSide":"bottom","toNode":"568f2702806c9ab4","toSide":"top"},
+		{"id":"96440058a78a93c2","fromNode":"568f2702806c9ab4","fromSide":"right","toNode":"43b9699f73e514a7","toSide":"left"},
+		{"id":"ddcecdae60a044d5","fromNode":"e5420d6432c863b7","fromSide":"right","toNode":"16e8a6d1f9312d11","toSide":"left"}
+	]
+}

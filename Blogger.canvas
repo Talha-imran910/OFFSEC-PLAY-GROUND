@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"174717c2d386935b","type":"group","x":100,"y":-460,"width":290,"height":240,"label":"TCP - open"},
+		{"id":"15389a34d695195f","type":"text","text":"# TARGET","x":-245,"y":-313,"width":250,"height":60},
+		{"id":"261ca259142664cc","type":"text","text":"### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   2048 95:1d:82:8f:5e:de:9a:00:a8:07:39:bd:ac:ad:d3:44 (RSA)\n|   256 d7:b4:52:a2:c8:fa:b7:0e:d1:a8:d0:70:cd:6b:36:90 (ECDSA)\n|_  256 df:f2:4f:77:33:44:d5:93:d7:79:17:45:5a:a1:36:8b (ED25519)\n80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))\n|_http-title: Blogger | Home\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-server-header: Apache/2.4.18 (Ubuntu)\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\n```","x":-974,"y":-120,"width":854,"height":428},
+		{"id":"db2406d3c87b5a88","type":"text","text":"port 22","x":120,"y":-440,"width":250,"height":60},
+		{"id":"9c10dd27f1160389","type":"text","text":"port 80","x":120,"y":-332,"width":250,"height":60},
+		{"id":"0f287d26135bc42c","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730111406.png","x":560,"y":-120,"width":395,"height":400},
+		{"id":"4ac49c415e569d30","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120435.png","x":840,"y":-399,"width":400,"height":195},
+		{"id":"e7ca0c4cff06058c","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120939.png","x":3417,"y":-48,"width":579,"height":100},
+		{"id":"e1f37df6625184be","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120839.png","x":3420,"y":-401,"width":572,"height":200},
+		{"id":"b23e003a124d82a5","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120503.png","x":1480,"y":-428,"width":400,"height":253},
+		{"id":"d1d541351476185e","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730121025.png","x":3507,"y":192,"width":399,"height":130},
+		{"id":"3ed7822b381652d4","type":"text","text":"```\nwe found is **akismet** which is default plugin and **wpdiscuz** version 7.0.4\n```","x":3531,"y":-604,"width":449,"height":116,"color":"1"},
+		{"id":"ad5bbfbc3d20f869","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730121101.png","x":4120,"y":99,"width":400,"height":316},
+		{"id":"ecb5576d6255be5d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730121125.png","x":4120,"y":532,"width":399,"height":117},
+		{"id":"0f1cf02d6cee5cc4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730121148.png","x":4080,"y":832,"width":480,"height":209},
+		{"id":"a2e7704c2874fd98","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120521.png","x":2180,"y":-501,"width":354,"height":400},
+		{"id":"8f9d5642374b23d9","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730120533.png","x":2840,"y":-460,"width":400,"height":319}
+	],
+	"edges":[
+		{"id":"c55275ec181f332f","fromNode":"15389a34d695195f","fromSide":"bottom","toNode":"261ca259142664cc","toSide":"top"},
+		{"id":"68d696c789f53611","fromNode":"15389a34d695195f","fromSide":"right","toNode":"174717c2d386935b","toSide":"left"},
+		{"id":"afbc2603a861ec3a","fromNode":"9c10dd27f1160389","fromSide":"right","toNode":"0f287d26135bc42c","toSide":"left"},
+		{"id":"c4230774b59b25e7","fromNode":"9c10dd27f1160389","fromSide":"right","toNode":"4ac49c415e569d30","toSide":"left"},
+		{"id":"41df37236c1c1fe6","fromNode":"4ac49c415e569d30","fromSide":"right","toNode":"b23e003a124d82a5","toSide":"left"},
+		{"id":"76a185eb00e0f5b7","fromNode":"b23e003a124d82a5","fromSide":"right","toNode":"a2e7704c2874fd98","toSide":"left"},
+		{"id":"4c2fe04642b1bea9","fromNode":"a2e7704c2874fd98","fromSide":"right","toNode":"8f9d5642374b23d9","toSide":"left"},
+		{"id":"538e7e9b0d479566","fromNode":"8f9d5642374b23d9","fromSide":"right","toNode":"e1f37df6625184be","toSide":"left"},
+		{"id":"904d5a684a593b63","fromNode":"8f9d5642374b23d9","fromSide":"right","toNode":"3ed7822b381652d4","toSide":"left"},
+		{"id":"ffd31e0cef31fb56","fromNode":"e1f37df6625184be","fromSide":"bottom","toNode":"e7ca0c4cff06058c","toSide":"top"},
+		{"id":"c3e05a4fa9c47585","fromNode":"e7ca0c4cff06058c","fromSide":"bottom","toNode":"d1d541351476185e","toSide":"top"},
+		{"id":"18149c3c311d5ee8","fromNode":"d1d541351476185e","fromSide":"right","toNode":"ad5bbfbc3d20f869","toSide":"left"},
+		{"id":"af3dd20350162967","fromNode":"ad5bbfbc3d20f869","fromSide":"bottom","toNode":"ecb5576d6255be5d","toSide":"top"},
+		{"id":"d6e1d257ec758216","fromNode":"ecb5576d6255be5d","fromSide":"bottom","toNode":"0f1cf02d6cee5cc4","toSide":"top","label":"(ALL) NOPASSWD: ALL"}
+	]
+}

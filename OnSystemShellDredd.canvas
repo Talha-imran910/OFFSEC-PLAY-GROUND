@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"ecb7817f9e2b890b","type":"group","x":300,"y":-280,"width":290,"height":200,"label":"TCP - open"},
+		{"id":"aa6564ef52c6f01a","type":"text","text":"# TARGET","x":-111,"y":-200,"width":250,"height":60},
+		{"id":"69ee8789f41b71b5","type":"text","text":"### nmap\n```\nPORT      STATE SERVICE VERSION\n21/tcp    open  ftp     vsftpd 3.0.3\n| ftp-syst: \n|   STAT: \n| FTP server status:\n|      Connected to ::ffff:192.168.45.153\n|      Logged in as ftp\n|      TYPE: ASCII\n|      No session bandwidth limit\n|      Session timeout in seconds is 300\n|      Control connection is plain text\n|      Data connections will be plain text\n|      At session startup, client count was 4\n|      vsFTPd 3.0.3 - secure, fast, stable\n|_End of status\n|_ftp-anon: Anonymous FTP login allowed (FTP code 230)\n61000/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)\n| ssh-hostkey: \n|   2048 59:2d:21:0c:2f:af:9d:5a:7b:3e:a4:27:aa:37:89:08 (RSA)\n|   256 59:26:da:44:3b:97:d2:30:b1:9b:9b:02:74:8b:87:58 (ECDSA)\n|_  256 8e:ad:10:4f:e3:3e:65:28:40:cb:5b:bf:1d:24:7f:17 (ED25519)\nService Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel\n```","x":-740,"y":-40,"width":680,"height":640},
+		{"id":"29e7aa96b69f9c7a","type":"text","text":"port 21","x":320,"y":-260,"width":250,"height":60},
+		{"id":"39422e7be5977337","type":"text","text":"port 61000","x":320,"y":-160,"width":250,"height":60},
+		{"id":"fbac0803c37ace6f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721214902.png","x":840,"y":-453,"width":539,"height":253},
+		{"id":"cef7386ae6c5f054","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721214920.png","x":1500,"y":-423,"width":773,"height":193,"color":"1"},
+		{"id":"1ee025935bf1d4f2","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721215104.png","x":940,"y":-100,"width":699,"height":310},
+		{"id":"6d36ea04486c2f71","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721215815.png","x":1840,"y":55,"width":353,"height":65},
+		{"id":"f877f85edfbfb1ff","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721220623.png","x":1900,"y":280,"width":840,"height":533},
+		{"id":"61d90ac0985a3b7d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721220753.png","x":2800,"y":1607,"width":701,"height":291},
+		{"id":"dba8cd688dfcb4c1","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721220654.png","x":1927,"y":1000,"width":787,"height":752},
+		{"id":"26b0892de8abd641","type":"text","text":"# SHELL","x":2215,"y":1860,"width":212,"height":60,"color":"1"},
+		{"id":"09cb9c1dc9de563a","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260721220717.png","x":2031,"y":2080,"width":580,"height":79}
+	],
+	"edges":[
+		{"id":"a73378abaa2fc62b","fromNode":"aa6564ef52c6f01a","fromSide":"bottom","toNode":"69ee8789f41b71b5","toSide":"top"},
+		{"id":"5b722868d5848736","fromNode":"aa6564ef52c6f01a","fromSide":"right","toNode":"ecb7817f9e2b890b","toSide":"left"},
+		{"id":"b430a0f814da292a","fromNode":"29e7aa96b69f9c7a","fromSide":"right","toNode":"fbac0803c37ace6f","toSide":"left"},
+		{"id":"08a0433e5ed3564e","fromNode":"fbac0803c37ace6f","fromSide":"right","toNode":"cef7386ae6c5f054","toSide":"left"},
+		{"id":"a37ff09acc726a8d","fromNode":"39422e7be5977337","fromSide":"right","toNode":"1ee025935bf1d4f2","toSide":"left"},
+		{"id":"00a047822df62083","fromNode":"cef7386ae6c5f054","fromSide":"bottom","toNode":"1ee025935bf1d4f2","toSide":"top","label":"FOUND SSH ID_RSA"},
+		{"id":"43403b9e6bc9590c","fromNode":"1ee025935bf1d4f2","fromSide":"right","toNode":"6d36ea04486c2f71","toSide":"left"},
+		{"id":"f6c6fca9b5ee7b6c","fromNode":"6d36ea04486c2f71","fromSide":"right","toNode":"f877f85edfbfb1ff","toSide":"top"},
+		{"id":"81d0b4c41655e6bf","fromNode":"f877f85edfbfb1ff","fromSide":"bottom","toNode":"dba8cd688dfcb4c1","toSide":"top"},
+		{"id":"c1d38b6243c6b43b","fromNode":"dba8cd688dfcb4c1","fromSide":"right","toNode":"61d90ac0985a3b7d","toSide":"top"},
+		{"id":"cd26895671360c8f","fromNode":"61d90ac0985a3b7d","fromSide":"bottom","toNode":"09cb9c1dc9de563a","toSide":"right"},
+		{"id":"83e5afef8f5c4372","fromNode":"dba8cd688dfcb4c1","fromSide":"bottom","toNode":"26b0892de8abd641","toSide":"top"},
+		{"id":"100cc5045be340e9","fromNode":"26b0892de8abd641","fromSide":"bottom","toNode":"09cb9c1dc9de563a","toSide":"top"}
+	]
+}

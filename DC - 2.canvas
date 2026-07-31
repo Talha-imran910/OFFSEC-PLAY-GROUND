@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"3c30c72b24dcb4fa","type":"group","x":600,"y":-700,"width":290,"height":198,"label":"TCP - open"},
+		{"id":"d3ceaa6df5c66866","type":"text","text":"# TARGET","x":180,"y":-620,"width":250,"height":60},
+		{"id":"ab9f4abd69138a91","type":"text","text":"port 80","x":620,"y":-680,"width":250,"height":60},
+		{"id":"565914fd60045f9e","type":"text","text":"port 7744","x":620,"y":-582,"width":250,"height":60},
+		{"id":"7f70a2f98bc20446","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224039.png","x":1168,"y":-1018,"width":1083,"height":737},
+		{"id":"8eaefeda437aa809","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224355.png","x":2460,"y":-540,"width":598,"height":186},
+		{"id":"6168b8a3e6ebbe86","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723215859.png","x":2820,"y":-91,"width":314,"height":54,"color":"1"},
+		{"id":"ecdf8b1a5a782b9f","type":"text","text":"## nmap\n```\nPORT     STATE SERVICE VERSION\n80/tcp   open  http    Apache httpd 2.4.10 ((Debian))\n|_http-title: Did not follow redirect to http://dc-2/\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-server-header: Apache/2.4.10 (Debian)\n7744/tcp open  ssh     OpenSSH 6.7p1 Debian 5+deb8u7 (protocol 2.0)\n| ssh-hostkey: \n|   1024 52:51:7b:6e:70:a4:33:7a:d2:4b:e1:0b:5a:0f:9e:d7 (DSA)\n|   2048 59:11:d8:af:38:51:8f:41:a7:44:b3:28:03:80:99:42 (RSA)\n|   256 df:18:1d:74:26:ce:c1:4f:6f:2f:c1:26:54:31:51:91 (ECDSA)\n|_  256 d9:38:5f:99:7c:0d:64:7e:1d:46:f6:e9:7c:c6:37:17 (ED25519)\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\n```","x":-480,"y":-281,"width":720,"height":463},
+		{"id":"0b53dc107816d9db","type":"text","text":"```\n[i] User(s) Identified:\n\n[+] admin\n | Found By: Rss Generator (Passive Detection)\n | Confirmed By:\n |  Wp Json Api (Aggressive Detection)\n |   - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&page=1\n |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)\n |  Login Error Messages (Aggressive Detection)\n\n[+] jerry\n | Found By: Wp Json Api (Aggressive Detection)\n |  - http://dc-2/index.php/wp-json/wp/v2/users/?per_page=100&page=1\n | Confirmed By:\n |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)\n |  Login Error Messages (Aggressive Detection)\n\n[+] tom\n | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)\n | Confirmed By: Login Error Messages (Aggressive Detection)\n\n```","x":280,"y":-281,"width":863,"height":570},
+		{"id":"16152f856fac92e3","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723220053.png","x":2300,"y":-91,"width":348,"height":54,"color":"1"},
+		{"id":"785c2281950b9720","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224627.png","x":3120,"y":200,"width":675,"height":267},
+		{"id":"7e715be84bc854ca","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224706.png","x":3124,"y":820,"width":671,"height":402},
+		{"id":"15c356abf3c0e8ad","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224750.png","x":3085,"y":1460,"width":750,"height":580},
+		{"id":"b8c1b69c8e9c0df9","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723224541.png","x":2077,"y":180,"width":796,"height":700},
+		{"id":"a61a0ec35d26c585","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723231848.png","x":3920,"y":520,"width":445,"height":340},
+		{"id":"913f89d18edb3d10","type":"text","text":"```\nexport PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n```","x":4120,"y":1021,"width":456,"height":140,"color":"1"},
+		{"id":"984b88f1ab96c99f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260723232023.png","x":4040,"y":1354,"width":512,"height":396}
+	],
+	"edges":[
+		{"id":"1c8736fc1bb73022","fromNode":"d3ceaa6df5c66866","fromSide":"bottom","toNode":"ecdf8b1a5a782b9f","toSide":"top"},
+		{"id":"5d01a50a1cf0b49e","fromNode":"d3ceaa6df5c66866","fromSide":"right","toNode":"3c30c72b24dcb4fa","toSide":"left"},
+		{"id":"ec413ed7c86acfc1","fromNode":"d3ceaa6df5c66866","fromSide":"bottom","toNode":"0b53dc107816d9db","toSide":"top","color":"1","label":"user names"},
+		{"id":"041203e02f3635c1","fromNode":"ab9f4abd69138a91","fromSide":"right","toNode":"7f70a2f98bc20446","toSide":"left"},
+		{"id":"801f630e2e8b959b","fromNode":"7f70a2f98bc20446","fromSide":"right","toNode":"8eaefeda437aa809","toSide":"top"},
+		{"id":"9885bb628149dad2","fromNode":"8eaefeda437aa809","fromSide":"bottom","toNode":"16152f856fac92e3","toSide":"top"},
+		{"id":"d57362c267a25818","fromNode":"8eaefeda437aa809","fromSide":"bottom","toNode":"6168b8a3e6ebbe86","toSide":"top"},
+		{"id":"14ece9baed788d65","fromNode":"16152f856fac92e3","fromSide":"bottom","toNode":"b8c1b69c8e9c0df9","toSide":"top"},
+		{"id":"631cc82f48f7e0df","fromNode":"6168b8a3e6ebbe86","fromSide":"bottom","toNode":"785c2281950b9720","toSide":"top"},
+		{"id":"5de4c6d8e9f0ea86","fromNode":"785c2281950b9720","fromSide":"bottom","toNode":"7e715be84bc854ca","toSide":"top","color":"#f76464","label":"rbash to normal bash"},
+		{"id":"5d280d9479f2f53f","fromNode":"7e715be84bc854ca","fromSide":"bottom","toNode":"15c356abf3c0e8ad","toSide":"top","label":"after path su jerry"},
+		{"id":"f818b4ebc146d90f","fromNode":"b8c1b69c8e9c0df9","fromSide":"right","toNode":"785c2281950b9720","toSide":"left","label":"ssh -p 7744"},
+		{"id":"ce939cacc7b01d5e","fromNode":"785c2281950b9720","fromSide":"bottom","toNode":"a61a0ec35d26c585","toSide":"left"},
+		{"id":"b2be40a06cead647","fromNode":"a61a0ec35d26c585","fromSide":"bottom","toNode":"7e715be84bc854ca","toSide":"right"},
+		{"id":"5ac99f2173f2cea2","fromNode":"a61a0ec35d26c585","fromSide":"bottom","toNode":"913f89d18edb3d10","toSide":"top"},
+		{"id":"6aa5a6ec6049938d","fromNode":"7e715be84bc854ca","fromSide":"bottom","toNode":"984b88f1ab96c99f","toSide":"top"},
+		{"id":"07a934f3d35cd533","fromNode":"984b88f1ab96c99f","fromSide":"left","toNode":"15c356abf3c0e8ad","toSide":"right"}
+	]
+}

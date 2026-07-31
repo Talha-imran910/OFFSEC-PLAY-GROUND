@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"83a15bce75d20d85","type":"group","x":240,"y":-240,"width":290,"height":176,"label":"TCP - open"},
+		{"id":"052c04d400383ae8","type":"text","text":"# TARGET","x":-157,"y":-172,"width":250,"height":60},
+		{"id":"262e65c35a25a679","type":"text","text":"### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.10 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   1024 06:cb:9e:a3:af:f0:10:48:c4:17:93:4a:2c:45:d9:48 (DSA)\n|   2048 b7:c5:42:7b:ba:ae:9b:9b:71:90:e7:47:b4:a4:de:5a (RSA)\n|_  256 fa:81:cd:00:2d:52:66:0b:70:fc:b8:40:fa:db:18:30 (ECDSA)\n80/tcp open  http    Apache httpd 2.2.22 ((Ubuntu))\n|_http-server-header: Apache/2.2.22 (Ubuntu)\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-title: Site doesn't have a title (text/html).\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\n```","x":-960,"y":40,"width":843,"height":425},
+		{"id":"2e6a28c77ae0292d","type":"text","text":"port 22","x":260,"y":-220,"width":250,"height":60},
+		{"id":"ad16d501664f0c46","type":"text","text":"port 80","x":260,"y":-144,"width":250,"height":60},
+		{"id":"e62000699bfe7bf8","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727045551.png","x":540,"y":0,"width":1275,"height":240},
+		{"id":"16bd5ddba9d84f47","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727045621.png","x":748,"y":380,"width":498,"height":400},
+		{"id":"6e18df71353459c4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727045655.png","x":1480,"y":380,"width":400,"height":395},
+		{"id":"21aa6d3d62e27ef6","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260727045709.png","x":1409,"y":940,"width":543,"height":300}
+	],
+	"edges":[
+		{"id":"3a21908cf8bca338","fromNode":"052c04d400383ae8","fromSide":"bottom","toNode":"262e65c35a25a679","toSide":"top"},
+		{"id":"a652c6c169370a20","fromNode":"052c04d400383ae8","fromSide":"right","toNode":"83a15bce75d20d85","toSide":"left"},
+		{"id":"2eb996c2ca625190","fromNode":"83a15bce75d20d85","fromSide":"right","toNode":"e62000699bfe7bf8","toSide":"top"},
+		{"id":"1a2e2513fa8fdd4b","fromNode":"e62000699bfe7bf8","fromSide":"bottom","toNode":"16bd5ddba9d84f47","toSide":"top","label":"FOUND ON GITHUB"},
+		{"id":"908154ede265555c","fromNode":"16bd5ddba9d84f47","fromSide":"right","toNode":"6e18df71353459c4","toSide":"left","label":"RUN"},
+		{"id":"27425b3e577b9eee","fromNode":"6e18df71353459c4","fromSide":"bottom","toNode":"21aa6d3d62e27ef6","toSide":"top","label":"firefart : anjaan"}
+	]
+}

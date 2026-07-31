@@ -1,0 +1,30 @@
+{
+	"nodes":[
+		{"id":"7c73228b23c051a6","type":"group","x":200,"y":-420,"width":160,"height":242,"label":"TCP - open"},
+		{"id":"6194a2a234971739","type":"text","text":"# TARGET","x":-100,"y":-300,"width":200,"height":60},
+		{"id":"e24967574ebc2f58","type":"text","text":"### nmap\n```\nPORT     STATE SERVICE VERSION\n6667/tcp open  irc     UnrealIRCd\n6697/tcp open  irc     UnrealIRCd\n8067/tcp open  irc     UnrealIRCd\nService Info: Host: irc.foonet.com\n```","x":-700,"y":-60,"width":657,"height":240},
+		{"id":"2c6aa0f6476535ca","type":"text","text":"port 6667","x":220,"y":-400,"width":120,"height":50},
+		{"id":"8387b9676d9cdf98","type":"text","text":"port 6697","x":220,"y":-328,"width":120,"height":50},
+		{"id":"d86c4514efb8ef24","type":"text","text":"port 8067","x":220,"y":-248,"width":120,"height":50},
+		{"id":"75a4d4a07f1f15cc","type":"text","text":"```\nIRC PORTS\n```","x":536,"y":-584,"width":250,"height":84,"color":"1"},
+		{"id":"9c5c22dd23d9459d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722215857.png","x":528,"y":-223,"width":516,"height":200},
+		{"id":"1a0fd852cb2d7b51","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722215921.png","x":431,"y":120,"width":765,"height":280},
+		{"id":"eadcf4df1158d24e","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722215954.png","x":1280,"y":-183,"width":620,"height":120},
+		{"id":"1324488f24e3825f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722220021.png","x":2120,"y":-164,"width":516,"height":83},
+		{"id":"4086395e277169e7","type":"text","text":"```\nTIRED WITH MSFCONSOLE BUT IT FAILED\n```","x":1208,"y":-438,"width":372,"height":88,"color":"1"},
+		{"id":"91538bb1456884a7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722220050.png","x":2116,"y":100,"width":524,"height":102},
+		{"id":"727c5ce2dd2b9223","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260722220135.png","x":2138,"y":400,"width":480,"height":317}
+	],
+	"edges":[
+		{"id":"3ad1c87f2594eb6e","fromNode":"6194a2a234971739","fromSide":"bottom","toNode":"e24967574ebc2f58","toSide":"top"},
+		{"id":"5b987a70f149e2bd","fromNode":"6194a2a234971739","fromSide":"right","toNode":"7c73228b23c051a6","toSide":"left"},
+		{"id":"57637f1b79cf9807","fromNode":"7c73228b23c051a6","fromSide":"right","toNode":"75a4d4a07f1f15cc","toSide":"left"},
+		{"id":"c4c421bf4740d46b","fromNode":"7c73228b23c051a6","fromSide":"right","toNode":"9c5c22dd23d9459d","toSide":"left"},
+		{"id":"bdf203bc1bbaed72","fromNode":"9c5c22dd23d9459d","fromSide":"bottom","toNode":"1a0fd852cb2d7b51","toSide":"top"},
+		{"id":"6a1073d4a6b2c56c","fromNode":"9c5c22dd23d9459d","fromSide":"right","toNode":"eadcf4df1158d24e","toSide":"left"},
+		{"id":"3876a0db12d03588","fromNode":"eadcf4df1158d24e","fromSide":"right","toNode":"1324488f24e3825f","toSide":"left"},
+		{"id":"69455193cd1d2d71","fromNode":"1324488f24e3825f","fromSide":"bottom","toNode":"91538bb1456884a7","toSide":"top"},
+		{"id":"bb1819d25594fe4e","fromNode":"91538bb1456884a7","fromSide":"bottom","toNode":"727c5ce2dd2b9223","toSide":"top","color":"1","label":"root : root"},
+		{"id":"bf34fae595070f10","fromNode":"9c5c22dd23d9459d","fromSide":"right","toNode":"4086395e277169e7","toSide":"left"}
+	]
+}

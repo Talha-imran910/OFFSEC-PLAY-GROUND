@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"b4b9bb586b045ea7","type":"group","x":380,"y":-760,"width":290,"height":187,"label":"TCP open"},
+		{"id":"98c7257437040eeb","type":"text","text":"# TARGET","x":20,"y":-660,"width":250,"height":60},
+		{"id":"598720584098fa10","type":"text","text":"## nmap\n```python\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)\n| ssh-hostkey: \n|   2048 8d:60:57:06:6c:27:e0:2f:76:2c:e6:42:c0:01:ba:25 (RSA)\n|   256 e7:83:8c:d7:bb:84:f3:2e:e8:a2:5f:79:6f:8e:19:30 (ECDSA)\n|_  256 fd:39:47:8a:5e:58:33:99:73:73:9e:22:7f:90:4f:4b (ED25519)\n80/tcp open  http    nginx 1.15.10\n| http-methods: \n|_  Supported Methods: GET HEAD POST\n|_http-server-header: nginx/1.15.10\n|_http-title: System Tools\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n\n```","x":-400,"y":-520,"width":670,"height":420},
+		{"id":"30623c99154137d0","type":"text","text":"port 22","x":400,"y":-740,"width":250,"height":60},
+		{"id":"0f8e6dda06e1db70","type":"text","text":"port 80","x":400,"y":-653,"width":250,"height":60},
+		{"id":"eab1f0c48bff7919","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260720045701.png","x":900,"y":-660,"width":399,"height":280}
+	],
+	"edges":[
+		{"id":"b84842959df723bf","fromNode":"98c7257437040eeb","fromSide":"bottom","toNode":"598720584098fa10","toSide":"top"},
+		{"id":"7cdc43f0af37bbd6","fromNode":"b4b9bb586b045ea7","fromSide":"right","toNode":"eab1f0c48bff7919","toSide":"left"},
+		{"id":"1c106b267b79d313","fromNode":"98c7257437040eeb","fromSide":"right","toNode":"b4b9bb586b045ea7","toSide":"left"}
+	]
+}
