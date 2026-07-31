@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"a8d5e29923d42c6b","x":200,"y":-200,"width":290,"height":174,"type":"group","label":"TCP - open"},
+		{"id":"69bcd3f1253bb78f","x":-155,"y":-141,"width":250,"height":60,"type":"text","text":"# TARGET"},
+		{"id":"00903e50902a9f89","x":-800,"y":40,"width":744,"height":524,"type":"text","text":"## nmap\n```\nPORT     STATE SERVICE VERSION\n1337/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)\n| ssh-hostkey: \n|   2048 f7:af:6c:d1:26:94:dc:e5:1a:22:1a:64:4e:1c:34:a9 (RSA)\n|   256 46:d2:8d:bd:2f:9e:af:ce:e2:45:5c:a6:12:c0:d9:19 (ECDSA)\n|_  256 8d:11:ed:ff:7d:c5:a7:24:99:22:7f:ce:29:88:b2:4a (ED25519)\n3306/tcp open  mysql   MariaDB 5.5.5-10.3.23\n| mysql-info: \n|   Protocol: 10\n|   Version: 5.5.5-10.3.23-MariaDB-0+deb10u1\n|   Thread ID: 38\n|   Capabilities flags: 63486\n\n|   Status: Autocommit\n|   Salt: BG{V}3&a836T$VexN[_K\n|_  Auth Plugin Name: mysql_native_password\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```"},
+		{"id":"2ec637056aaf3c87","x":220,"y":-180,"width":250,"height":60,"type":"text","text":"port 1337"},
+		{"id":"c40fb274f94c3f06","type":"text","text":"port 3306","x":220,"y":-106,"width":250,"height":60},
+		{"id":"c63c492a50473258","x":680,"y":-479,"width":753,"height":299,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260731223439.png"},
+		{"id":"5b7f5c8f9429724c","x":680,"y":40,"width":792,"height":720,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260731223503.png"},
+		{"id":"b3a0620bb31e780d","x":1720,"y":200,"width":837,"height":400,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260731223540.png"},
+		{"id":"aa4136fa7deb9d97","x":1810,"y":720,"width":658,"height":196,"color":"#ee8181","type":"text","text":"```\npython3 -c \"from cryptography.fernet import Fernet; k = 'UJ5_V_b-TWKKyzlErA96f-9aEnQEfdjFbRKt8ULjdV0='; token = 'gAAAAABfMbX0bqWJTTdHKUYYG9U5Y6JGCpgEiLqmYIVlWB7t8gvsuayfhLOO_cHnJQF1_ibv14si1MbL7Dgt9Odk8mKHAXLhyHZplax0v02MMzh_z_eI7ys='; print(Fernet(k.encode()).decrypt(token.encode()).decode())\"\n```"},
+		{"id":"890806c27f43b90f","x":1725,"y":1080,"width":827,"height":140,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260731224743.png"},
+		{"id":"537334f0aedcec30","x":1755,"y":1380,"width":768,"height":260,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260731224806.png"}
+	],
+	"edges":[
+		{"id":"34cb778cdcfc6e48","fromNode":"69bcd3f1253bb78f","fromSide":"bottom","toNode":"00903e50902a9f89","toSide":"top"},
+		{"id":"1c605674501a2d06","fromNode":"69bcd3f1253bb78f","fromSide":"right","toNode":"a8d5e29923d42c6b","toSide":"left"},
+		{"id":"691eb8a908d5affc","fromNode":"2ec637056aaf3c87","fromSide":"right","toNode":"c63c492a50473258","toSide":"left"},
+		{"id":"3695bc2b105bb1fa","fromNode":"c40fb274f94c3f06","fromSide":"right","toNode":"5b7f5c8f9429724c","toSide":"left"},
+		{"id":"bc7df503033c1a53","fromNode":"c63c492a50473258","fromSide":"bottom","toNode":"5b7f5c8f9429724c","toSide":"top"},
+		{"id":"41a7b96cce968bb6","fromNode":"5b7f5c8f9429724c","fromSide":"right","toNode":"b3a0620bb31e780d","toSide":"left"},
+		{"id":"e0ce3341ea3ef264","fromNode":"b3a0620bb31e780d","fromSide":"bottom","toNode":"aa4136fa7deb9d97","toSide":"top"},
+		{"id":"e40a41f2e589250b","fromNode":"aa4136fa7deb9d97","fromSide":"bottom","toNode":"890806c27f43b90f","toSide":"top"},
+		{"id":"ca6ba0af60fe03a5","fromNode":"890806c27f43b90f","fromSide":"bottom","toNode":"537334f0aedcec30","toSide":"top"}
+	]
+}
