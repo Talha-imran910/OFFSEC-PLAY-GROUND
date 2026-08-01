@@ -102,6 +102,8 @@ Everything here is created while learning, practicing, and improving my penetrat
 | ✅ | SunsetNoontide |
 | ✅ | Vegeta1 |
 | ✅ | WPWN |
+| ✅ | Geisha |
+| ✅ | Solstice |
 
 ---
 
