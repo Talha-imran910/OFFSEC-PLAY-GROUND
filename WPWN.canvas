@@ -1,16 +1,16 @@
 {
 	"nodes":[
-		{"id":"81ff7dcb249e379e","x":260,"y":-220,"width":290,"height":179,"type":"group","label":"TCP - open"},
-		{"id":"dc90a354d1ec32eb","x":-159,"y":-163,"width":250,"height":60,"type":"text","text":"# TARGET"},
-		{"id":"5d3d4aab0134b9b3","x":-723,"y":18,"width":643,"height":502,"type":"text","text":"### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)\n| ssh-hostkey: \n|   2048 59:b7:db:e0:ba:63:76:af:d0:20:03:11:e1:3c:0e:34 (RSA)\n|   256 2e:20:56:75:84:ca:35:ce:e3:6a:21:32:1f:e7:f5:9a (ECDSA)\n|_  256 0d:02:83:8b:1a:1c:ec:0f:ae:74:cc:7b:da:12:89:9e (ED25519)\n80/tcp open  http    Apache httpd 2.4.38 ((Debian))\n| http-methods: \n|_  Supported Methods: OPTIONS HEAD GET POST\n|_http-title: Site doesn't have a title (text/html).\n|_http-server-header: Apache/2.4.38 (Debian)\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```"},
+		{"id":"81ff7dcb249e379e","type":"group","x":260,"y":-220,"width":290,"height":179,"label":"TCP - open"},
+		{"id":"dc90a354d1ec32eb","type":"text","text":"# TARGET","x":-159,"y":-163,"width":250,"height":60},
+		{"id":"5d3d4aab0134b9b3","type":"text","text":"### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)\n| ssh-hostkey: \n|   2048 59:b7:db:e0:ba:63:76:af:d0:20:03:11:e1:3c:0e:34 (RSA)\n|   256 2e:20:56:75:84:ca:35:ce:e3:6a:21:32:1f:e7:f5:9a (ECDSA)\n|_  256 0d:02:83:8b:1a:1c:ec:0f:ae:74:cc:7b:da:12:89:9e (ED25519)\n80/tcp open  http    Apache httpd 2.4.38 ((Debian))\n| http-methods: \n|_  Supported Methods: OPTIONS HEAD GET POST\n|_http-title: Site doesn't have a title (text/html).\n|_http-server-header: Apache/2.4.38 (Debian)\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```","x":-723,"y":18,"width":643,"height":502},
 		{"id":"bc126ab330f162b6","type":"text","text":"port 80","x":280,"y":-121,"width":250,"height":60},
-		{"id":"ebfd5811c85c1c42","x":280,"y":-200,"width":250,"height":60,"type":"text","text":"port 22"},
-		{"id":"47815b2322871d8e","x":720,"y":-397,"width":400,"height":306,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001439.png"},
-		{"id":"fe82ebf4ba6f76da","x":720,"y":0,"width":400,"height":286,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001420.png"},
-		{"id":"ebedbfcfa1ffb2e0","x":1400,"y":-160,"width":615,"height":220,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001526.png"},
-		{"id":"8f28bdb12e9b9a71","x":2180,"y":-146,"width":914,"height":192,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001549.png"},
-		{"id":"5e047a8945d5a029","x":3300,"y":-160,"width":871,"height":220,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001835.png"},
-		{"id":"d13dd8f534781e5a","x":3442,"y":440,"width":588,"height":380,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001742.png"}
+		{"id":"ebfd5811c85c1c42","type":"text","text":"port 22","x":280,"y":-200,"width":250,"height":60},
+		{"id":"47815b2322871d8e","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001439.png","x":720,"y":-397,"width":400,"height":306},
+		{"id":"fe82ebf4ba6f76da","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001420.png","x":720,"y":0,"width":400,"height":286},
+		{"id":"ebedbfcfa1ffb2e0","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001526.png","x":1400,"y":-160,"width":615,"height":220},
+		{"id":"8f28bdb12e9b9a71","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001549.png","x":2180,"y":-146,"width":914,"height":192},
+		{"id":"5e047a8945d5a029","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001835.png","x":3300,"y":-160,"width":871,"height":220},
+		{"id":"d13dd8f534781e5a","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801001742.png","x":3442,"y":440,"width":588,"height":380}
 	],
 	"edges":[
 		{"id":"1c79a78e6f556a31","fromNode":"dc90a354d1ec32eb","fromSide":"bottom","toNode":"5d3d4aab0134b9b3","toSide":"top"},
