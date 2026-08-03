@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"e95ad905e22b2dfa","type":"group","x":1280,"y":-600,"width":290,"height":359,"label":"TCP - open"},
+		{"id":"374b6afa22707404","type":"text","text":"# TARGET","x":840,"y":-400,"width":250,"height":60},
+		{"id":"05dc050baccf3396","type":"text","text":"port 80","x":1300,"y":-411,"width":250,"height":60},
+		{"id":"d6caca5b7465c863","type":"text","text":"port 1898","x":1300,"y":-321,"width":250,"height":60},
+		{"id":"9ad28e3163b590d5","type":"text","text":"## nmap\n```\nPORT     STATE SERVICE VERSION\n22/tcp   open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   1024 46:b1:99:60:7d:81:69:3c:ae:1f:c7:ff:c3:66:e3:10 (DSA)\n|   2048 f3:e8:88:f2:2d:d0:b2:54:0b:9c:ad:61:33:59:55:93 (RSA)\n|   256 ce:63:2a:f7:53:6e:46:e2:ae:81:e3:ff:b7:16:f4:52 (ECDSA)\n|_  256 c6:55:ca:07:37:65:e3:06:c1:d6:5b:77:dc:23:df:cc (ED25519)\n80/tcp   open  http?\n| fingerprint-strings: \n|   FourOhFourRequest: \n|     _____ _ _ \n|     |_|/ ___ ___ __ _ ___ _ _ \n|     \\x20| __/ (_| __ \\x20|_| |_ \n|     ___/ __| |___/ ___|__,_|___/__, ( ) \n|     |___/ \n|     ______ _ _ _ \n|     ___(_) | | | |\n|     \\x20/ _` | / _ / _` | | | |/ _` | |\n|_    __,_|__,_|_| |_|\n1898/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))\n|_http-server-header: Apache/2.4.7 (Ubuntu)\n|_http-title: Lampi\\xC3\\xA3o\n|_http-favicon: Unknown favicon MD5: CF2445DCB53A031C02F9B57E2199BC03\n| http-robots.txt: 36 disallowed entries (15 shown)\n| /includes/ /misc/ /modules/ /profiles/ /scripts/ \n| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt \n| /INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt \n|_/LICENSE.txt /MAINTAINERS.txt\n|_http-generator: Drupal 7 (http://drupal.org)\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n","x":-120,"y":-200,"width":800,"height":880},
+		{"id":"e0f4ec8c04ea015f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730154721.png","x":1780,"y":-261,"width":400,"height":386},
+		{"id":"9bf3813e154e6f17","type":"text","text":"port 80","x":1300,"y":-500,"width":250,"height":60},
+		{"id":"2418d5eb6de76e51","type":"text","text":"port 22","x":1300,"y":-580,"width":250,"height":60},
+		{"id":"48bce92d61212dc1","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730154957.png","x":3760,"y":700,"width":911,"height":50},
+		{"id":"6087f441df10b350","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730154805.png","x":2580,"y":-234,"width":635,"height":332},
+		{"id":"e5fc98228c57479e","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730155030.png","x":3684,"y":960,"width":1064,"height":140},
+		{"id":"c3355d500c8799b4","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730155132.png","x":3690,"y":1300,"width":1051,"height":200},
+		{"id":"f702ddcb33b0ac6e","type":"text","text":"# SHELL","x":3690,"y":1800,"width":250,"height":60},
+		{"id":"96ca5b6a86589c71","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730155153.png","x":3746,"y":2040,"width":939,"height":460},
+		{"id":"f2ad72a63a64717c","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730155249.png","x":5100,"y":1166,"width":759,"height":134},
+		{"id":"07bf540ccccf2ed7","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730155334.png","x":5020,"y":2169,"width":780,"height":203},
+		{"id":"40be4bc7a6f6047a","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730154817.png","x":2434,"y":460,"width":927,"height":220},
+		{"id":"7264cd2260facec9","type":"text","text":"```\nlogin:tiago   password: Virgulino\n```","x":2695,"y":240,"width":406,"height":69,"color":"4"},
+		{"id":"df4f7b3b00297730","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260730154858.png","x":3560,"y":94,"width":618,"height":362}
+	],
+	"edges":[
+		{"id":"1fc27fee61b6df6c","fromNode":"374b6afa22707404","fromSide":"bottom","toNode":"9ad28e3163b590d5","toSide":"top"},
+		{"id":"d2c09a29333463ca","fromNode":"374b6afa22707404","fromSide":"right","toNode":"e95ad905e22b2dfa","toSide":"left"},
+		{"id":"cbd5555f94f67d74","fromNode":"d6caca5b7465c863","fromSide":"right","toNode":"e0f4ec8c04ea015f","toSide":"left"},
+		{"id":"438c91295c997468","fromNode":"e0f4ec8c04ea015f","fromSide":"right","toNode":"6087f441df10b350","toSide":"left"},
+		{"id":"5932ea27b0e399a6","fromNode":"6087f441df10b350","fromSide":"bottom","toNode":"7264cd2260facec9","toSide":"top"},
+		{"id":"866a5acaca6fba22","fromNode":"7264cd2260facec9","fromSide":"bottom","toNode":"40be4bc7a6f6047a","toSide":"top"},
+		{"id":"029682d5a44ac88e","fromNode":"7264cd2260facec9","fromSide":"right","toNode":"df4f7b3b00297730","toSide":"left"},
+		{"id":"731398202ac88d7a","fromNode":"df4f7b3b00297730","fromSide":"bottom","toNode":"48bce92d61212dc1","toSide":"top"},
+		{"id":"eeda133bae3ab90e","fromNode":"48bce92d61212dc1","fromSide":"bottom","toNode":"e5fc98228c57479e","toSide":"top"},
+		{"id":"2dbde33ac8383cf5","fromNode":"e5fc98228c57479e","fromSide":"bottom","toNode":"c3355d500c8799b4","toSide":"top"},
+		{"id":"0eb64a550527ef76","fromNode":"c3355d500c8799b4","fromSide":"bottom","toNode":"96ca5b6a86589c71","toSide":"top"},
+		{"id":"6c4c074bd1af4add","fromNode":"c3355d500c8799b4","fromSide":"bottom","toNode":"f702ddcb33b0ac6e","toSide":"right"},
+		{"id":"fd79c1887d9dade2","fromNode":"f2ad72a63a64717c","fromSide":"top","toNode":"e5fc98228c57479e","toSide":"right"},
+		{"id":"a139f9569183640f","fromNode":"96ca5b6a86589c71","fromSide":"top","toNode":"f702ddcb33b0ac6e","toSide":"right"},
+		{"id":"39a4e363b640bb20","fromNode":"07bf540ccccf2ed7","fromSide":"left","toNode":"96ca5b6a86589c71","toSide":"right"}
+	]
+}

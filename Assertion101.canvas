@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"b7b9a5bf03edc33a","x":180,"y":-460,"width":290,"height":200,"type":"group","label":"Untitled group"},
+		{"id":"2aba28920efebb83","type":"text","text":"# TARGET","x":-263,"y":-387,"width":250,"height":60},
+		{"id":"7af73e58b269c4d0","type":"text","text":"#### nmap\n```\nPORT   STATE SERVICE VERSION\n22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)\n| ssh-hostkey: \n|   2048 6e:ce:aa:cc:02:de:a5:a3:58:5d:da:2b:ef:54:07:f9 (RSA)\n|   256 9d:3f:df:16:7a:e1:59:58:84:4a:e3:29:8f:44:87:8d (ECDSA)\n|_  256 87:b5:6f:f8:21:81:d3:3b:43:d0:40:81:c0:e3:69:89 (ED25519)\n80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))\n| http-methods: \n|_  Supported Methods: GET HEAD POST OPTIONS\n|_http-title: Assertion\n|_http-server-header: Apache/2.4.29 (Ubuntu)\nService Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel\n```","x":-518,"y":0,"width":761,"height":412},
+		{"id":"a0e4423fa932e0d0","type":"text","text":"port 22","x":200,"y":-440,"width":250,"height":60},
+		{"id":"5064558a53abd83a","type":"text","text":"port80","x":200,"y":-365,"width":250,"height":60},
+		{"id":"19517cd3c8c77d97","x":680,"y":-442,"width":400,"height":215,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260803202935.png"},
+		{"id":"b012a2bb3dbea633","x":1080,"y":-140,"width":400,"height":390,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260803203325.png"},
+		{"id":"1c5933328b1ec77b","x":1720,"y":-27,"width":400,"height":165,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260803203346.png"},
+		{"id":"285219c13f13ae57","x":1720,"y":412,"width":400,"height":378,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260803203403.png"}
+	],
+	"edges":[
+		{"id":"c253b9debd468588","fromNode":"2aba28920efebb83","fromSide":"bottom","toNode":"7af73e58b269c4d0","toSide":"top"},
+		{"id":"1692ed87f130c045","fromNode":"2aba28920efebb83","fromSide":"right","toNode":"b7b9a5bf03edc33a","toSide":"left"},
+		{"id":"45a6a6b86d8444c6","fromNode":"5064558a53abd83a","fromSide":"right","toNode":"19517cd3c8c77d97","toSide":"left"},
+		{"id":"8aa850306dc8643e","fromNode":"19517cd3c8c77d97","fromSide":"right","toNode":"b012a2bb3dbea633","toSide":"top"},
+		{"id":"64ad2adabc0bbc49","fromNode":"1c5933328b1ec77b","fromSide":"left","toNode":"b012a2bb3dbea633","toSide":"right"},
+		{"id":"79bc2b0fec88d3a7","fromNode":"1c5933328b1ec77b","fromSide":"bottom","toNode":"285219c13f13ae57","toSide":"top"}
+	]
+}

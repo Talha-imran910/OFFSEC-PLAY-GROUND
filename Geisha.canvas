@@ -10,14 +10,14 @@
 		{"id":"037df1c9f091d1cc","type":"text","text":"port 7080","x":320,"y":-260,"width":250,"height":60},
 		{"id":"645d8e0c0b9244d6","type":"text","text":"port22","x":320,"y":-420,"width":250,"height":60},
 		{"id":"4df6bbf3c8567a4d","type":"text","text":"port 21","x":320,"y":-500,"width":250,"height":60},
-		{"id":"6094f0a59a6e7101","x":940,"y":-511,"width":868,"height":242,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151846.png"},
-		{"id":"e76833d140f22ebc","x":1980,"y":-460,"width":536,"height":140,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151926.png"},
-		{"id":"538e719dd5e9ed59","x":1846,"y":-180,"width":805,"height":520,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151949.png"},
-		{"id":"b6304872a2173f66","x":817,"y":400,"width":909,"height":500,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152220.png"},
-		{"id":"882484f95a828f2f","x":817,"y":-153,"width":909,"height":507,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152017.png"},
-		{"id":"88c373a6a55e0aeb","x":817,"y":1000,"width":909,"height":530,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152300.png"},
-		{"id":"1b132e97e1f12143","x":2220,"y":1000,"width":706,"height":530,"type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152404.png"},
-		{"id":"22cc0262dc5fcda9","x":3160,"y":1240,"width":102,"height":50,"color":"#d10000","type":"text","text":"XXX"}
+		{"id":"6094f0a59a6e7101","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151846.png","x":940,"y":-511,"width":868,"height":242},
+		{"id":"e76833d140f22ebc","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151926.png","x":1980,"y":-460,"width":536,"height":140},
+		{"id":"538e719dd5e9ed59","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801151949.png","x":1846,"y":-180,"width":805,"height":520},
+		{"id":"b6304872a2173f66","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152220.png","x":817,"y":400,"width":909,"height":500},
+		{"id":"882484f95a828f2f","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152017.png","x":817,"y":-153,"width":908,"height":507},
+		{"id":"88c373a6a55e0aeb","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152300.png","x":817,"y":1000,"width":909,"height":530},
+		{"id":"1b132e97e1f12143","type":"file","file":"Offsec  Play-Ground/media/Pasted image 20260801152404.png","x":2220,"y":1000,"width":706,"height":530},
+		{"id":"22cc0262dc5fcda9","type":"text","text":"XXX","x":3160,"y":1240,"width":102,"height":50,"color":"#d10000"}
 	],
 	"edges":[
 		{"id":"a373378422aea790","fromNode":"d1e81fd27fe37f4f","fromSide":"bottom","toNode":"73714c42c53d3bdf","toSide":"top"},
